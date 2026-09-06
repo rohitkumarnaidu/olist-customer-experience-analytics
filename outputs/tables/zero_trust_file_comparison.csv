@@ -1,0 +1,10 @@
+dataset,file_size_bytes,official_expected_rows,independent_actual_rows,row_variance,columns_count,exact_duplicate_rows,total_null_cells,reviewer_verdict
+olist_orders_dataset.csv,17654914,99441,99441,0,8,0,4908,VERIFIED (Exact match)
+olist_order_items_dataset.csv,15438671,112650,112650,0,7,0,0,VERIFIED (Exact match)
+olist_order_payments_dataset.csv,5777138,103886,103886,0,5,0,0,VERIFIED (Exact match)
+olist_order_reviews_dataset.csv,14451670,100000,99224,-776,7,0,145903,"VERIFIED EMPIRICAL (Kaggle/Olist standard release has 99,224 rows; 100,000 is rounded spec)"
+olist_customers_dataset.csv,9033957,99441,99441,0,5,0,0,VERIFIED (Exact match)
+olist_products_dataset.csv,2379446,32951,32951,0,9,0,2448,VERIFIED (Exact match)
+olist_sellers_dataset.csv,174703,3095,3095,0,4,0,0,VERIFIED (Exact match)
+olist_geolocation_dataset.csv,61273883,1000163,1000163,0,5,261831,0,"VERIFIED WITH HEAVY DUPLICATION (261,831 exact dup rows)"
+product_category_name_translation.csv,2613,71,71,0,2,0,0,VERIFIED (Exact match)

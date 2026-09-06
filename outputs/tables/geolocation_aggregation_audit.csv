@@ -1,0 +1,16 @@
+metric,value
+total_raw_rows,1000163.0
+unique_zip_prefixes,19015.0
+configured_lat_min,-33.75
+configured_lat_max,5.27
+configured_lng_min,-73.99
+configured_lng_max,-32.0
+valid_coordinates_count,1000132.0
+invalid_coordinates_count,31.0
+mainland_valid_coordinates_count,1000121.0
+mainland_invalid_coordinates_count,42.0
+unique_zips_with_valid_centroids,19011.0
+unique_zips_with_all_invalid_coords,4.0
+mean_raw_rows_per_zip,52.6
+min_rows_per_zip,1.0
+max_rows_per_zip,1146.0

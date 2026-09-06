@@ -1,0 +1,7 @@
+metric,value
+total_raw_payment_rows,103886
+total_orders_in_payments,99440
+multi_payment_orders_count,2961
+multi_payment_orders_pct,2.9777
+total_settlement_value_brl,16008872.12
+dominant_payment_type_rule,"Max cumulative payment value per order, tie-break alphabetical ASC"

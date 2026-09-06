@@ -1,0 +1,16 @@
+metric,value
+total_raw_reviews,99224
+unique_orders_reviewed,98673
+orders_with_multiple_reviews,547
+multi_review_order_rows,1098
+duplicate_review_id_rows,1603
+unique_duplicate_review_ids,789
+duplicate_id_content_identical,True
+multi_review_score_identical_count,346
+multi_review_score_improved_count,88
+multi_review_score_worsened_count,113
+multi_review_median_time_delta_days,2.4825
+multi_review_mean_time_delta_days,5.7012
+raw_rows_retained,99224
+rows_selected_for_order_level_layer,98673
+selection_rule,"LATEST_VALID_REVIEW_PER_ORDER (descending answer_timestamp, creation_date, review_id tie-breaker)"

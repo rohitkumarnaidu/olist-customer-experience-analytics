@@ -1,0 +1,14 @@
+metric,value
+total_raw_item_rows,112650
+total_orders_in_items,98666
+multi_item_orders_count,9803
+multi_item_orders_pct,9.9355
+multi_seller_orders_count,1278
+multi_seller_orders_pct,1.2953
+multi_category_orders_count,786
+multi_category_orders_pct,0.7966
+total_item_price_brl,13591643.7
+total_freight_value_brl,2251909.54
+total_order_gmv_brl,15843553.24
+dominant_category_rule,"Max cumulative item spend per order, tie-break alphabetical ASC"
+dominant_seller_rule,"Max cumulative item spend per order, tie-break seller_id ASC"
