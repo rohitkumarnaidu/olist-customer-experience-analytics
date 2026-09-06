@@ -1,0 +1,13 @@
+feature_name,layer,readiness_status,rationale
+delivery_delay_days,Layer G,READY,Direct continuous SLA measure (actual - estimated). Strongest predictor of low reviews.
+delay_severity_bucket,Derived,READY,"Captures non-linear thresholds (On-Time, 1-3d, 4-7d, >7d)."
+survey_pre_delivery_flag,Layer H/I,READY (WITH CONTROLS),Must be modeled alongside delay days to avoid collinear confounding.
+haversine_distance_km,Layer H,READY,Objective spatial exogenous covariate between customer and seller centroids.
+freight_share_pct,Layer F,READY,Captures economic freight burden relative to item price.
+order_gmv,Layer D,READY (LOG-TRANSFORMED),Skewed financial ticket size; use log(GMV) in linear/logistic models.
+payment_installments_max,Layer D,READY,Behavioral financing indicator. Collinear with GMV; check VIF.
+dominant_category,Layer D,READY (ENCODED),Use top 15 categories + 'other' to prevent high-cardinality overfitting.
+customer_state / region,Layer D,READY,"Regional infrastructure dummy variables (North, Northeast, etc.)."
+review_comment_message,Raw,DO NOT USE AS COVARIATE,Endogenous post-review text. Use only for qualitative / NLP deep dive.
+review_answer_timestamp,Raw,DO NOT USE AS COVARIATE,Post-review behavior; not an operational predictor.
+payment_value_total,Layer D,DO NOT USE WITH GMV,Highly collinear with order_gmv (r = 0.999). Pick GMV for commercial modeling.

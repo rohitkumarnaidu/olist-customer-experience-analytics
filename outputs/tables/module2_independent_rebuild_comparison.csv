@@ -1,0 +1,13 @@
+Field,Current_Model_Metric,Independent_Rebuild_Metric,Max_Absolute_Diff,Match,Severity
+order_id (Grain),"Nulls: 0, Unique: 99441","Nulls: 0, Unique: 99441",0 mismatches,EXACT,NONE
+item_price_total,"Sum: 13,591,643.70, Mean: 136.6805","Sum: 13,591,643.70, Mean: 136.6805",0.000000,EXACT,NONE
+freight_total,"Sum: 2,251,909.54, Mean: 22.6457","Sum: 2,251,909.54, Mean: 22.6457",0.000000,EXACT,NONE
+order_gmv,"Sum: 15,843,553.24, Mean: 159.3262","Sum: 15,843,553.24, Mean: 159.3262",0.000000,EXACT,NONE
+payment_value_total,"Sum: 16,008,872.12, Mean: 160.9886","Sum: 16,008,872.12, Mean: 160.9886",0.000000,EXACT,NONE
+payment_line_count,"Sum: 103,886.00, Mean: 1.0447","Sum: 103,886.00, Mean: 1.0447",0.000000,EXACT,NONE
+review_score,"Sum: 403,216.00, Mean: 4.0548","Sum: 403,216.00, Mean: 4.0548",0.000000,EXACT,NONE
+customer_lat,"Sum: -2,101,681.66, Mean: -21.1350","Sum: -2,101,681.66, Mean: -21.1350",0.000000,EXACT,NONE
+seller_lat,"Sum: -2,244,043.64, Mean: -22.5666","Sum: -2,244,043.64, Mean: -22.5666",0.000000,EXACT,NONE
+dominant_category,"Nulls: 775, Unique: 75","Nulls: 775, Unique: 75",0 mismatches,EXACT,NONE
+dominant_seller,"Nulls: 775, Unique: 3086","Nulls: 775, Unique: 3086",0 mismatches,EXACT,NONE
+dominant_payment_type,"Nulls: 1, Unique: 6","Nulls: 1, Unique: 6",0 mismatches,EXACT,NONE

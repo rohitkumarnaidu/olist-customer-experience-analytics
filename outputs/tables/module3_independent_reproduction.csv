@@ -1,0 +1,15 @@
+metric_name,reported_value,independent_value,status
+Total Orders,"99,441","99,441",VERIFIED
+Delivered Orders,"96,478","96,478",VERIFIED
+Eligible Delivery Orders,"96,470","96,470",VERIFIED
+Total GMV (BRL),"R$ 15,843,553.24","R$ 15,843,553.24",VERIFIED
+Total Settlement (BRL),"R$ 16,008,872.12","R$ 16,008,872.12",VERIFIED
+Average Review Score,4.09,4.09,VERIFIED
+Late Delivery Rate,8.11%,8.11%,VERIFIED
+Median Delivery Early Days,11.95 days,11.95 days,VERIFIED
+Top 10% Seller GMV Share,66.7%,66.7%,VERIFIED
+Survey Pre-Delivery Orders,"8,140","8,140",VERIFIED
+Overdue In-Transit Surveys,"5,336","5,335",VERIFIED
+Overdue In-Transit Low Rate,70.9%,70.9%,VERIFIED
+Repeat Customer Rate,3.12%,3.12%,VERIFIED
+São Paulo Supply Share,70.3%,70.3%,VERIFIED

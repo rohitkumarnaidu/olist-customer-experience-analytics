@@ -1,0 +1,8 @@
+diagnostic_category,order_count,total_abs_diff_brl,mean_abs_diff_brl,pct_of_platform
+Exact Match (|diff| < 0.01 BRL),99060,1.9500000004116043,0.0,99.61685823754789
+Minor Cent Rounding (0.01 <= diff < 1.0 BRL),131,6.670000000002297,0.050916030534368675,0.13173640651240434
+Voucher-Driven Difference,7,13.370000000000083,1.910000000000012,0.007039349966311682
+Split Tender Multi-Payment,15,34.290000000000035,2.2860000000000023,0.015084321356382177
+Missing Item Record in Raw Source,0,0.0,0.0,0.0
+Missing Payment Record in Raw Source,0,0.0,0.0,0.0
+Large Unexplained Reconciliation Gap (>= 50 BRL),8,718.3600000000001,89.79500000000002,0.008044971390070493
