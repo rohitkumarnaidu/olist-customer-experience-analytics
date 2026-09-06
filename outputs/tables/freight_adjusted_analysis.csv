@@ -1,0 +1,4 @@
+model_specification,freight_coef,freight_odds_ratio,p_value,interpretation
+Bivariate Freight Burden Only,0.0037304169189692213,1.0037373835843257,8.533131695237476e-07,Weak unadjusted correlation (r=-0.065)
+Conditioning on Spatial Distance,0.0014712338106539307,1.0014723166060666,0.05874222245952835,Distance absorbs geographic shipping burden
+Fully Controlled (Distance + Delay + Ticket Size),0.02545314928193761,1.0257798466222505,3.002893168032083e-118,No direct satisfaction penalty when delivered on-time

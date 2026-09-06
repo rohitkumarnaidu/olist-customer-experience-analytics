@@ -1,0 +1,20 @@
+Feature,Role,Available_Before_Outcome,Multicollinearity_Risk,Use,Reason
+delivery_delay_days,Primary Exogenous Predictor,Yes,Low,YES,Direct continuous operational SLA measure (actual delivery date - estimated delivery date).
+delay_severity_bucket,Categorical Non-Linear Predictor,Yes,Low (when dummy encoded),YES,"Captures non-linear thresholds: On-Time, 1-3d late, 4-7d late, >7d late."
+delivery_days_total,Operational Covariate,Yes,"Moderate (correlated with distance r=0.42)",YES,Total transit duration from purchase to customer delivery.
+approval_to_carrier_days,Operational Decomposition Component,Yes,Low,YES,Seller handling stage duration (order approval to carrier handoff).
+carrier_to_delivery_days,Operational Decomposition Component,Yes,"Moderate (correlated with distance r=0.40)",YES,Carrier transit stage duration (carrier handoff to customer delivery).
+haversine_distance_km,Spatial Exogenous Covariate,Yes,"Moderate (correlated with duration r=0.42)",YES,Great-circle distance in kilometers between customer and seller zip centroids.
+is_interstate,Spatial Categorical Covariate,Yes,"Moderate (correlated with distance r=0.55)",YES,Binary indicator if seller state differs from customer state.
+order_gmv,Commercial Covariate,Yes,"High with raw price/payment; Low when log-transformed",YES (LOG-TRANSFORMED),"Commercial ticket size; log(order_gmv + 1) normalizes distribution."
+freight_share_pct,Commercial Covariate,Yes,Low,YES,Freight burden ratio (freight_total / order_gmv) measuring logistics cost intensity.
+dominant_category,Commercial / Product Control,Yes,"Low when grouped to top 15 + other",YES (TOP 15 + OTHER),Controls for product handling complexity and baseline consumer expectations.
+customer_state,Geographic Covariate,Yes,Low when grouped by macro-region,YES (REGIONAL / FIXED EFFECTS),Captures destination logistics infrastructure and regional economic variance.
+seller_state,Geographic Covariate,Yes,Low,YES (SP VS NON-SP / FIXED EFFECTS),Captures origin fulfillment concentration (70.3% SP dominance).
+survey_pre_delivery_flag,Operational Timing Covariate,Yes (at survey generation),"High with delay; Requires joint conditioning",YES (WITH CONTROLS),Tests independent feedback timing effect holding delay severity constant.
+payment_installments_max,Behavioral Financing Covariate,Yes,"Moderate with GMV (r=0.33)",OPTIONAL CONTROL,Examines whether financing commitments alter dissatisfaction sensitivity.
+payment_value_total,Redundant Commercial Metric,Yes,"Extreme with order_gmv (r=0.999)",NO (EXCLUDED),Redundant with order_gmv; creates extreme variance inflation.
+item_price_total,Redundant Commercial Metric,Yes,"Extreme with order_gmv (r=0.98)",NO (EXCLUDED),Collinear component of GMV; captured jointly by GMV and freight_share_pct.
+review_comment_message,Qualitative Outcome Text,No (Generated during review),N/A (Endogenous),NO (EXCLUDED),Text created contemporaneously with rating; qualitative analysis only.
+review_answer_timestamp,Behavioral Outcome Timestamp,No (Generated post-review),N/A (Endogenous),NO (EXCLUDED),Post-outcome customer submission timestamp; not an operational predictor.
+order_status,Funnel Status Indicator,Yes,N/A,NO AS PREDICTOR (USED FOR POPULATION FILTER),Used strictly to filter Population B (delivered orders).

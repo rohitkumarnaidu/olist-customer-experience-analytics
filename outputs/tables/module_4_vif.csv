@@ -1,0 +1,8 @@
+feature,vif,collinearity_status
+delivery_delay_days,2.203839437180557,LOW
+delivery_days_total,2.7848915545232757,MODERATE
+haversine_distance_km,1.8137071704485355,LOW
+log_gmv,2.262990147160652,LOW
+freight_share_pct,2.301076511044161,LOW
+is_interstate,1.739898649336224,LOW
+survey_pre_delivery_flag,1.4009222324710584,LOW

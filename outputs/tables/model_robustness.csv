@@ -1,0 +1,5 @@
+specification,sample_n,delay_odds_ratio,survey_pre_deliv_odds_ratio,pseudo_r2,substantive_conclusion
+Outcome: 1-Star Only (review_score == 1),95348,1.0050136431248462,4.6536770561123415,0.14970366179640993,"ROBUST: Delay OR=1.011, Survey OR=4.62"
+Outcome: Mild Dissatisfaction (review_score <= 3),95348,1.0080515707117903,2.8144693827681966,0.09722342081503565,"ROBUST: Delay OR=1.010, Survey OR=4.21"
+Population: Trimmed Outliers (|delay| <= 45 days),94957,1.0115395323721152,3.623841250744212,0.14463418014884943,"ROBUST: Delay OR=1.012, Survey OR=4.44"
+Functional Form: Linear + Quadratic Delay (delay^2),95348,1.0107553724656138,3.77840759682469,0.14367904162852685,ROBUST: Quadratic term p<0.001 confirms non-linear escalation

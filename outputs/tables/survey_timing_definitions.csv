@@ -1,0 +1,5 @@
+definition_id,timing_condition,order_count,pct_of_sample,low_review_rate_pct,mean_review_score,unadjusted_odds_ratio,adjusted_odds_ratio
+Definition A (Primary),review_creation_date < order_delivered_customer_date,8140,8.494740357321756,49.93857493857494,2.768058968058968,9.660285660677243,4.143322025373906
+Definition B (Response Pre-Delivery),review_answer_timestamp < order_delivered_customer_date,4653,4.855777258306896,78.29357403825489,1.7414571244358479,34.502639154864355,19.589816110356917
+Definition C (Creation Pre-Estimate),review_creation_date < order_estimated_delivery_date,86343,90.10581900150275,9.17040176968602,4.296966748896842,0.1188874091426433,0.27577263337291796
+Definition D (Response Pre-Estimate),review_answer_timestamp < order_estimated_delivery_date,81566,85.12063783603273,9.024593580658607,4.3052987764509725,0.18880172453404925,0.4535360805403478
