@@ -1,0 +1,9 @@
+Feature,Source_Columns,Formula,Unit,Temporal_Position,Independence_Risk
+delivery_delay_days,"order_delivered_customer_date, order_estimated_delivery_date",(delivered - estimated).dt.total_seconds() / 86400.0,Days,Post-Delivery,Core outcome SLA metric
+delivery_days_total,"order_delivered_customer_date, order_purchase_timestamp",(delivered - purchase).dt.total_seconds() / 86400.0,Days,Post-Delivery,Collinear with delay + buffer
+approval_to_carrier_days,"order_delivered_carrier_date, order_approved_at",(carrier_handoff - approved).dt.total_seconds() / 86400.0,Days,Pre-Carrier,Exogenous to carrier transit
+carrier_to_delivery_days,"order_delivered_customer_date, order_delivered_carrier_date",(delivered - carrier_handoff).dt.total_seconds() / 86400.0,Days,In-Transit,Major component of duration
+haversine_distance_km,"customer_lat, customer_lng, seller_lat, seller_lng",Great-Circle Haversine(R=6371km),Kilometers,Exogenous at Purchase,Correlated with duration (r=0.40)
+freight_share_pct,"freight_total, order_gmv",(freight_total / order_gmv) * 100.0,Percentage,Exogenous at Purchase,Low VIF (2.30)
+log_gmv,order_gmv,np.log(order_gmv + 1.0),Log-BRL,Exogenous at Purchase,Redundant with payment value
+survey_pre_delivery_flag,"review_creation_date, order_delivered_customer_date",(review_creation_date < order_delivered_customer_date).astype(int),Binary Indicator,Contemporaneous with Survey,Requires delay conditioning

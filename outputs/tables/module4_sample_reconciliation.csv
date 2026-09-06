@@ -1,0 +1,6 @@
+Model,Intended_Population,Initial_N,Missing_Removed,Final_N,Current_Report_N,Match
+Unadjusted Delay (Pop E Census),Population E,95824,0,95824,95824,EXACT
+Nested Logistic Models 1-5,Population E (Complete Cases),95824,476,95348,95348,EXACT
+Survey Timing Stratified Models,Population E,95824,0,95824,95824,EXACT
+Delivery Component Models A-D,Population E,95824,15,95809,95809,EXACT
+Seller Context (N >= 100),High-Volume Sellers,95824,51932,43892,43892,EXACT

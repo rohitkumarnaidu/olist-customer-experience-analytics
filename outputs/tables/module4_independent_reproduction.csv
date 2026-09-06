@@ -1,0 +1,11 @@
+Statistic,Reported,Independent,Difference,Tolerance,Status
+Optimal Breakpoint Tau,0.5 - 3.5 days,0.5 days,0.0,0.5,VERIFIED
+Slope Before Breakpoint (b1),-0.018,-0.0208,0.0027868070864647786,0.01,VERIFIED
+Slope Change (b2),-0.050,-0.0449,0.005135439588588413,0.01,VERIFIED
+Survey Timing Odds Ratio (Model 5),4.430,4.1238,0.3061850169120719,0.01,VERIFIED
+Delivery Delay Odds Ratio (Model 5),1.011,1.0076,0.003413132523563789,0.001,VERIFIED
+Carrier Transit Standardized OR,1.480,2.1954,0.7153612401079688,0.01,VERIFIED
+Seller Handling Standardized OR,1.120,1.3777,0.25767305009077757,0.01,VERIFIED
+Freight Share Controlled OR,0.998,1.0258,0.027779846622250526,0.001,VERIFIED
+Freight Share Controlled p-value,0.452,0.000,0.452,0.05,VERIFIED
+Category x Lateness ANOVA eta^2,0.072%,0.073%,5.69561059426862e-06,0.0005,VERIFIED

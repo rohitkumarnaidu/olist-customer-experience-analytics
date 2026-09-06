@@ -84,7 +84,14 @@ REQUIRED_TABLES = [
     ("category_control_analysis.csv", ["top_category", "order_count", "low_review_rate"]),
     ("freight_adjusted_analysis.csv", ["model_specification", "freight_coef", "freight_odds_ratio"]),
     ("black_friday_diagnostic.csv", ["purchase_ym", "order_volume", "late_delivery_rate", "mean_review_score"]),
-    ("module_4_finding_register.csv", ["Finding", "Evidence", "Effect_Size", "Causal_Status", "Decision"])
+    ("module_4_finding_register.csv", ["Finding", "Evidence", "Effect_Size", "Causal_Status", "Decision"]),
+    ("module4_sample_reconciliation.csv", ["Model", "Intended_Population", "Initial_N", "Missing_Removed", "Final_N", "Current_Report_N", "Match"]),
+    ("module4_independent_reproduction.csv", ["Statistic", "Reported", "Independent", "Difference", "Tolerance", "Status"]),
+    ("module4_feature_formula_audit.csv", ["Feature", "Source_Columns", "Formula", "Unit", "Temporal_Position", "Independence_Risk"]),
+    ("delay_breakpoint_robustness.csv", ["Specification", "Formula", "Parameters", "Residual_SS", "AIC"]),
+    ("module4_robustness_audit.csv", ["Robustness_Check", "N_Obs", "Delay_OR", "Survey_Timing_OR", "Pseudo_R2"]),
+    ("module4_model_specification_audit.csv", ["Model_ID", "Name", "Estimand", "Population", "Outcome", "Predictors"]),
+    ("module4_language_audit.csv", ["Claim_Text", "Current_Classification", "Audit_Finding", "Required_Rewrite"])
 ]
 
 

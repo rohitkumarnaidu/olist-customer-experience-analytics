@@ -1,0 +1,6 @@
+Model_ID,Name,Estimand,Population,Outcome,Predictors,Identification_Assumptions,Limitations
+M1,Unadjusted Delay,Total association of delay with low review,Population E,low_review (<= 2 stars),delivery_delay_days,None (Bivariate observational),Omits duration and spatial confounding
+M2,Delivery Controls,Delay association conditioned on distance & duration,Population E (Complete Cases),low_review,delay + duration + distance,Linear additive spatial controls,Duration is partly collinear with delay
+M3,Commercial Controls,Delivery association adjusting for basket size & freight burden,Population E (Complete Cases),low_review,M2 + log_gmv + freight_share,Linear log-ticket elasticity,Freight share is zero-inflated on free shipping
+M4,Spatial & Category Controls,Delivery association within macro-regions & merchandise categories,Population E (Complete Cases),low_review,M3 + interstate + region_FE + category_FE,Category and regional baseline intercepts,15 dummy coefficients absorb baseline variance
+M5,Full Feedback Timing Model,Independent survey timing association conditioned on operational delays,Population E (Complete Cases),low_review,M4 + survey_pre_delivery_flag,Conditional independence of survey timing given delay,Timing triggered by estimated date expiration

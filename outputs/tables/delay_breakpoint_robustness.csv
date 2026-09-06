@@ -1,0 +1,4 @@
+Specification,Formula,Parameters,Residual_SS,AIC,BIC,Adj_R2
+Linear OLS (No Breakpoint),review ~ delay,2,146900.0071529006,312880.47776489484,312899.4183018038,0.07129336908267592
+Piecewise Linear (Breakpoint tau = 0.5 - 3.5d),"review ~ delay + max(0, delay - 0.5)",3,144531.0306780995,311324.58054477524,311352.99135013873,0.08626057973277124
+Quadratic Non-Linear,"review ~ delay + max(0, delay)^2",3,146606.5584296133,312690.8674697458,312719.2782751093,0.07313888873313634
