@@ -1,0 +1,20 @@
+kpi_name,value,unit,grain,population,benchmark_status
+Total Orders,"99,441",Orders,Platform,All Orders,VERIFIED
+Delivered Orders,"96,478",Orders,Platform,Status == delivered,VERIFIED
+Non-Delivered Orders,"2,963",Orders,Platform,Status != delivered,VERIFIED
+Delivered Rate,97.02%,Percentage,Platform,All Orders,VERIFIED
+Total GMV (Price + Freight),"R$ 15,843,553.24",BRL,Platform,"Orders with Items (98,666)",VERIFIED
+Total Settlement Value,"R$ 16,008,872.12",BRL,Platform,"Orders with Payments (99,440)",VERIFIED
+Average Order Value (AOV),R$ 160.58,BRL / Order,Order,Orders with Items,VERIFIED
+Average Review Score,4.09,Stars (1-5),Order,"Orders with Review (98,673)",VERIFIED
+1-Star Review Rate,11.52%,Percentage,Order,Orders with Review,VERIFIED
+1-2 Star (Low Review) Rate,14.69%,Percentage,Order,Orders with Review,VERIFIED
+4-5 Star (High Review) Rate,77.07%,Percentage,Order,Orders with Review,VERIFIED
+Late Delivery Rate,8.11%,Percentage,Order,"Eligible Delivered (96,470)",VERIFIED
+Severe Delay Rate (>7d Late),3.46%,Percentage,Order,"Eligible Delivered (96,470)",VERIFIED
+Average Delivery Duration,12.6,Days,Order,Eligible Delivered,VERIFIED
+Median Delivery Duration,10.2,Days,Order,Eligible Delivered,VERIFIED
+Average Freight Value,R$ 22.82,BRL / Order,Order,Orders with Items,VERIFIED
+Median Freight Value,R$ 17.17,BRL / Order,Order,Orders with Items,VERIFIED
+Repeat Customer Rate (Unique Cust),3.12%,Percentage,Customer,"Unique Customers (96,096)",VERIFIED
+Repeat Customer Order Share,6.38%,Percentage,Order,"All Orders (99,441)",VERIFIED

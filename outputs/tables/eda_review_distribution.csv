@@ -1,0 +1,5 @@
+timing_segment,description,order_count,share_of_reviews_pct,mean_review_score,low_review_rate_pct,star_1_rate_pct,star_5_rate_pct,low_review_volume
+Standard: Survey >= Delivered,Customer received product prior to receiving/answering survey,87689,88.86828210351364,4.284573891822236,9.36377424762513,6.670163874602288,62.028304576400686,8211
+Triggered: Estimate Elapsed < Delivered,Automated survey sent because estimated date passed while package still in transit,5336,5.407760988314939,1.9829460269865067,70.87706146926537,61.844077961019494,11.806596701649177,3782
+Early Survey: Prior to Estimate & Delivery,Survey created prior to both delivery and estimated date (proactive/tracking),2805,2.8427229333252257,4.261675579322638,10.089126559714796,7.3440285204991085,61.568627450980394,283
+Undelivered Order Survey,"Order never marked delivered (canceled, unavailable, or in transit)",2843,2.881233974846209,1.7485051002462189,78.0161800914527,70.6296166021808,9.110094970102004,2218
