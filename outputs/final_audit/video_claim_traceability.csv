@@ -1,0 +1,21 @@
+Script Claim,Source Claim ID,Source Table,Verified?
+"Olist scaled to 99,441 orders with 12.8% low-review rate (12,272 low reviews)",POP-A / POP-E,outputs/final_audit/population_registry.csv,YES
+"Integrated 9 operational datasets into validated order-grain model of 99,441 orders",POP-A,outputs/final_audit/population_registry.csv,YES
+"Delivery delay is strongest operational predictor of customer dissatisfaction (Adjusted OR 9.8x)",CLAIM-01,outputs/final_audit/final_claim_registry.csv,YES
+"Econometric structural breakpoint at 0.5 days late (Delta AIC = -1,556)",CLAIM-02,outputs/final_audit/final_claim_registry.csv,YES
+"Operational escalation zone past 3.5 days late reaches 72.73% low-review rate",CLAIM-02,outputs/final_audit/final_claim_registry.csv,YES
+"Carrier linehaul transit accounts for 76.9% of duration (9.30d carrier vs 2.79d seller)",CLAIM-03,outputs/final_audit/final_claim_registry.csv,YES
+"Carrier standardized OR 2.20 vs Seller OR 1.38 (3.16x excess-odds ratio)",CLAIM-03,outputs/final_audit/final_claim_registry.csv,YES
+"Seller supply concentration in São Paulo is 70.9% (67,967 orders)",CLAIM-06,outputs/final_audit/final_claim_registry.csv,YES
+"Interstate freight shipments account for 64.0% of platform orders (61,310 orders)",CLAIM-06,outputs/final_audit/final_claim_registry.csv,YES
+"SP to RJ corridor generates 1,625 low reviews (20.15% rate) across 8,065 orders with 15.31% late rate",CLAIM-07,outputs/final_audit/final_claim_registry.csv,YES
+"Strict pre-delivery survey cohort of 4,976 orders has 72.61% low reviews (3,613 reviews)",CLAIM-04,outputs/final_audit/final_claim_registry.csv,YES
+"Strict pre-delivery surveys exhibit controlled Adjusted Odds Ratio of 12.50x (p < 10^-50)",CLAIM-04,outputs/final_audit/final_claim_registry.csv,YES
+"Overdue-in-transit surveys represent observed accounting share of 26.09% of all platform low reviews",CLAIM-05,outputs/final_audit/final_claim_registry.csv,YES
+"Multi-segment intervention overlap rate is 50.86% (gross 14,255 low reviews)",CLAIM-11,outputs/final_audit/final_claim_registry.csv,YES
+"Deduplicated unique footprint covers 32,811 orders, R$ 5.59M GMV, and 7,005 low reviews (57.08% of platform)",CLAIM-11,outputs/final_audit/final_claim_registry.csv,YES
+"INT-01: Post-delivery survey gating pilot (50/50 randomized A/B trial on overdue-in-transit)",INT-01,outputs/final_audit/final_recommendation_registry.csv,YES
+"INT-02: SP to RJ dynamic SLA promise calibration pilot (+2 business days buffer)",INT-02,outputs/final_audit/final_recommendation_registry.csv,YES
+"INT-03: Proactive delay messaging & calibrated service recovery at Day 3.0 late",INT-03,outputs/final_audit/final_recommendation_registry.csv,YES
+"INT-04 / INT-05: Linehaul capacity reservation 60 days pre-peak & 3PL carrier diversification",INT-04 / INT-05,outputs/final_audit/final_recommendation_registry.csv,YES
+"INT-06: Merchant dispatch SLA monitoring and graduated buy-box governance (>5d handling)",INT-06,outputs/final_audit/final_recommendation_registry.csv,YES

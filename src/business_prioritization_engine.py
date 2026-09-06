@@ -122,9 +122,9 @@ def build_root_cause_contribution_matrix() -> pd.DataFrame:
             'Level': 'Level 1: Structural',
             'Factor': 'Geographic Seller Concentration',
             'Evidence_Type': 'Descriptive Fact',
-            'Effect_Size': '70.3% seller volume in SP; 63.6% interstate orders',
+            'Effect_Size': '70.9% seller volume in SP; 64.0% interstate orders',
             'Robustness': 'Complete Census (N=99,441)',
-            'Business_Exposure': '63.6% of orders cross state boundaries',
+            'Business_Exposure': '64.0% of orders cross state boundaries',
             'Actionability': 'Low (Requires multi-year regional merchant onboarding)',
             'Causal_Confidence': 'Exogenous Structural Fact',
             'Priority': 'P1 — Strategic'
@@ -144,9 +144,9 @@ def build_root_cause_contribution_matrix() -> pd.DataFrame:
             'Level': 'Level 2: Operational',
             'Factor': 'Carrier Linehaul Transit Delay',
             'Evidence_Type': 'Adjusted Associative',
-            'Effect_Size': '82.5% of timeline (12.1d avg); Standardized OR = 1.48 (+48% excess odds/SD)',
+            'Effect_Size': '76.9% of timeline (9.3d avg); Standardized OR = 2.20 (+120% excess odds/SD vs +38% seller)',
             'Robustness': 'Robust across 8 model specifications (p < 10^-50)',
-            'Business_Exposure': 'Accounts for 89.7% of Black Friday fulfillment shock (+5.2d)',
+            'Business_Exposure': 'Accounts for 81.8% of Black Friday fulfillment surge (+2.7d carrier surge)',
             'Actionability': 'High (Carrier contract SLAs, dynamic routing, volume penalties)',
             'Causal_Confidence': 'Primary Operational Predictor',
             'Priority': 'P0 — Immediate'
@@ -765,7 +765,7 @@ def build_prioritization_score_table() -> pd.DataFrame:
             'Severity_Score': 4,          # 18.2% low review rate in SP -> BA
             'Exposure_Score': 3,          # High regional concentration
             'Actionability_Score': 3,     # Requires secondary carrier onboarding & contract renegotiation
-            'Evidence_Score': 5,          # Carrier accounts for 82.5% timeline and 4.0x excess odds
+            'Evidence_Score': 5,          # Carrier accounts for 76.9% timeline and 3.2x excess odds per SD
             'P_Rank': 'P1 — Strategic',
             'Addressable_Low_Reviews': 1250,
             'Addressable_GMV_BRL': 1150000.0,
@@ -779,7 +779,7 @@ def build_prioritization_score_table() -> pd.DataFrame:
             'Severity_Score': 5,          # Rating dropped to 3.82 stars; late rate rose to 16.2%
             'Exposure_Score': 3,          # Seasonal quarter exposure
             'Actionability_Score': 3,     # Requires guaranteed freight space reservations with carriers
-            'Evidence_Score': 5,          # Event study proved carrier transit rose +5.2d
+            'Evidence_Score': 5,          # Event study proved carrier transit surged +2.7d (+3.3d total)
             'P_Rank': 'P1 — Strategic',
             'Addressable_Low_Reviews': 1180,
             'Addressable_GMV_BRL': 2100000.0,
@@ -934,7 +934,7 @@ def build_executive_scorecard() -> pd.DataFrame:
         {
             'KPI_Code': 'KPI-06',
             'Metric_Name': 'Black Friday Transit Inflation (Carrier Surge Days)',
-            'Current_Value': '+5.2 days',
+            'Current_Value': '+2.7 days',
             'Problem_Threshold': '> +2.0 days',
             'Target_Benchmark': '< +1.5 days',
             'Affected_Population': 'Q4 Holiday Surge Shipments',
@@ -998,8 +998,8 @@ def build_root_cause_waterfall_figure():
 
     # Define steps in the causal cascade
     steps = [
-        ("1. STRUCTURAL GEOGRAPHY", "70.3% of sellers concentrated in São Paulo.\nGenerates long-haul exposure to North/Northeast.", "#EFF6FF", COLOR_PRIMARY),
-        ("2. CARRIER TRANSIT BOTTLENECK", "Carrier linehaul accounts for 82.5% of fulfillment duration.\nExcess odds ratio is 4.0x vs. seller handling.", "#FEF2F2", COLOR_DANGER),
+        ("1. STRUCTURAL GEOGRAPHY", "70.9% of sellers concentrated in São Paulo.\nGenerates long-haul exposure to North/Northeast.", "#EFF6FF", COLOR_PRIMARY),
+        ("2. CARRIER TRANSIT BOTTLENECK", "Carrier linehaul accounts for 76.9% of fulfillment duration.\nExcess odds ratio is 3.2x per SD vs. seller handling.", "#FEF2F2", COLOR_DANGER),
         ("3. CORRIDOR CONCENTRATION", "SP -> RJ trunk corridor accounts for 13.2% of all low reviews.\nLate delivery rate reaches 15.3%.", "#FFFBEB", COLOR_ACCENT),
         ("4. OPERATIONAL SLA BREACH", "Inflection breakpoint at Day 0.5; escalation beyond Day 3.5.\n5.2% of orders generate 29.6% of low reviews.", "#FEF2F2", COLOR_DANGER),
         ("5. FEEDBACK ASYNCHRONY AMPLIFIER", "CRM survey sent while package is delayed in transit.\nMultiplies odds of low review by 12.5x (Strict Calendar Pre-Deliv).", "#FDF2F8", COLOR_PURPLE),
@@ -1089,7 +1089,7 @@ def build_module5_finding_register() -> pd.DataFrame:
         },
         {
             'Finding': 'M5-05: The Three-Tiered System (Signature Competition Narrative)',
-            'Metric': 'Structural Exposure (70.3% SP) -> Operational Bottleneck (82.5% Carrier) -> Feedback Amplification (12.5x OR)',
+            'Metric': 'Structural Exposure (70.9% SP) -> Operational Bottleneck (76.9% Carrier) -> Feedback Amplification (12.5x OR)',
             'Evidence': 'Integrates all empirical modules: geography is mediated by transit time; carrier transit dominates delays; survey timing crystallizes anxiety.',
             'Exposure': 'Platform-Wide (N=95,824 delivered orders)',
             'Mechanism': 'Multi-layered system failure requiring targeted, tiered interventions rather than generic "better logistics".',

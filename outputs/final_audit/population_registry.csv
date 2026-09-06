@@ -1,0 +1,8 @@
+Population_ID,Population_Name,N,Definition,Exclusions,Purpose,Reconciled
+Population A,All Platform Orders,99441,Complete census of all orders in olist_orders_dataset.csv,None (Census),"Top-level volume, order status breakdown, macro GMV",YES
+Population B,Delivered Orders,96478,order_status == 'delivered',"2,963 non-delivered orders (shipped, canceled, unavailable, invoiced, etc.)","Fulfillment rate, overall delivery funnel",YES
+Population C,Orders with Delivery Timestamp,96476,order_delivered_customer_date.notna(),Orders lacking physical customer drop-off timestamp,Physical transit duration calculations,YES
+Population D,Orders with Valid Review,98673,review_score.notna() (selected latest per order),768 orders without submitted survey review,"Platform-wide review distributions, unconditioned CSAT",YES
+Population E,Delivered & Reviewed Orders,95824,Delivered + valid delivery date + valid review score,"3,617 orders: non-delivered (2,963) or missing delivery date/review",PRIMARY CANONICAL ANALYSIS POPULATION for satisfaction & delivery,YES
+Population F,Spatial Complete Cases,95348,Population E + valid customer & seller geolocation centroids,476 orders with missing or overseas ZIP prefixes (0.5% of Pop E),"Haversine distance models, spatial regressions, route mapping",YES
+Population G,Multivariate Model Complete Cases,95333,"Population F + non-null handling, carrier transit, and distance features",0 additional orders beyond Pop F,Formal econometric logistic models and VIF regressions,YES

@@ -48,10 +48,12 @@ htmlcov/
 .mypy_cache/
 .ruff_cache/
 
-# Jupyter Notebook Checkpoints
+# Jupyter Notebook Checkpoints & Demo Copies
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 *-checkpoint.ipynb
+*_DEMO.ipynb
+*-demo.ipynb
 
 # IDEs & Code Editors
 .idea/

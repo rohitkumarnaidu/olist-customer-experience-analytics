@@ -1,0 +1,15 @@
+Requirement,Implemented?,Evidence,Location,Gap
+Q1: Marketplace Performance Over Time,YES,"Monthly volume, revenue (GMV vs Settlement), AOV, review score divergence tracked (2016-09 to 2018-10)","src/eda_engine.py, outputs/tables/eda_time_series.csv, fig01",None
+Q2: Delivery Performance & Customer Satisfaction,YES,"Econometric breakpoint search (tau=0.5d), escalation zone (tau=3.5d), logistic models, 5 delay strata","src/statistical_engine.py, delay_threshold_analysis.csv, fig08, fig19, fig20",None
+Q3: Seller & Geographic Patterns,YES,"70.9% SP seller volume, 64.0% interstate, SP->RJ corridor analysis (N=8,065, 20.2% low review), distance mediation","src/geolocation.py, high_risk_geographic_segments.csv, fig12, fig23, fig27",None
+Q4: Product Category Performance,YES,"Two-way ANOVA interaction test (partial eta^2 = 0.073%), category controls, bulky dimensions","src/statistical_engine.py, category_control_analysis.csv, fig04, fig15",None
+Q5: Payment Behavior & Installments,YES,"Credit card vs boleto mix, installment distribution vs ticket size, financial settlement vs GMV reconciliation","src/payment_aggregation.py, outputs/tables/eda_payment_summary.csv, fig10, fig11",None
+Q6: Root Cause Analysis,YES,"4-level hierarchical decomposition (Structural -> Operational -> Feedback Timing -> Context), VIF multicollinearity audit","src/business_prioritization_engine.py, root_cause_contribution_matrix.csv, fig25, fig29",None
+Optional Deep Dive: Repeat Customers,YES,"customer_id vs customer_unique_id disambiguated; repeat customer rate 3.0%, satisfaction parity evaluated","src/data_model.py, fig17",None
+Optional Deep Dive: Freight & Product Dimensions,YES,"Freight share controlled odds ratio = 1.00 (non-association), volumetric weight analysis","src/statistical_engine.py, freight_adjusted_analysis.csv, fig16",None
+Optional Deep Dive: Anomalies & Shocks,YES,"Black Friday 2017 capacity shock decomposed (+2.7d carrier transit surge, +3.3d total delivery surge)","src/statistical_engine.py, black_friday_diagnostic.csv, fig24",None
+Deliverable 1: Google Colab Notebook,YES,"FINAL_Olist_Analytics_Submission.ipynb structured, portable, runs top-to-bottom",notebooks/FINAL_Olist_Analytics_Submission.ipynb,None
+Deliverable 2: Analysis Report,YES,Comprehensive executive report answering 6 Core Questions with evidence chains,"reports/final_competition_report.md, reports/final_report_appendix.md",None
+Deliverable 3: Three-Minute Video Structure,YES,Strict sequencing prepared: Problem -> Approach -> Key Insights -> Recommendations,outputs/final_integration_report.md (Video Script Architecture),Recording deferred to separate step as instructed
+AI Disclosure Compliance,YES,Formal disclosure of AI assistance and independent team verification included,"reports/final_competition_report.md, FINAL_Olist_Analytics_Submission.ipynb, README.md",None
+Public Accessibility Guarantee,YES,"All code, documentation, and notebook designed for public GitHub / Colab / Drive access","README.md, PROJECT_STATUS.md",None

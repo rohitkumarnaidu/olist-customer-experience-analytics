@@ -14,8 +14,8 @@
 > **Where should Olist intervene first to create the largest measurable improvement in customer experience?**
 
 Past analytical efforts often default to generic recommendations like *"improve postal logistics"* or *"penalize late merchants"*. Grounded in the zero-trust validated statistical findings from Modules 0–4, Module 5 shows that customer dissatisfaction on the Olist marketplace is driven by an evidence-based **three-tier operational system**:
-1. **The Structural Baseline (Geography):** $70.3\%$ of merchant supply is concentrated in São Paulo state, creating massive cross-regional linehaul exposure ($63.6\%$ interstate orders).
-2. **The Operational Engine (Carrier Transit):** Carrier linehaul accounts for **$82.5\%$ of fulfillment duration** ($12.1$ days average) and exhibits **$4.0\text{x}$ the excess odds of customer dissatisfaction** ($+48.0\%$ vs. $+12.0\%$ per standard deviation) compared to merchant handling time. 
+1. **The Structural Baseline (Geography):** $70.9\%$ of merchant supply is concentrated in São Paulo state, creating massive cross-regional linehaul exposure ($64.0\%$ interstate orders).
+2. **The Operational Engine (Carrier Transit):** Carrier linehaul accounts for **$76.9\%$ of fulfillment duration** ($9.3$ days carrier vs. $2.8$ days seller) and exhibits **$3.2\text{x}$ the excess odds of customer dissatisfaction** ($+120.0\%$ vs. $+38.0\%$ per standard deviation, Model D $\text{OR} = 2.20$ vs. $1.38$) compared to merchant handling time. 
 3. **The Amplification Mechanism (Feedback Asynchrony — Signature Insight):** When orders breach promised SLAs, automated CRM satisfaction surveys solicit reviews while parcels are still delayed in transit. This operational asynchrony multiplies the odds of a low review by **$12.50\text{x}$** (strict calendar pre-delivery) and accounts for **$26.1\%$ of all low reviews on the entire marketplace** ($29.4\%$ of low reviews among delivered orders).
 
 ### The Prioritized Action Summary
@@ -26,7 +26,7 @@ By establishing a transparent, multi-factor prioritization model ($\text{Severit
   - **INT-03:** Deploy proactive in-transit automated delay notifications with an A/B tested service-recovery credit at Day 3.0 late (observed segment exposure: $3,636$ low reviews).
 * **P1 — Strategic (Structural & Carrier Logistics Partnerships):**
   - **INT-04:** Establish secondary 3PL private carrier partnerships on long-haul routes to the Northeast (`SP -> BA, PE, CE`).
-  - **INT-05:** Pre-contract peak-season dedicated linehaul truckload capacity to defend against the annual Black Friday logistics shock ($+5.2$ day transit surge).
+  - **INT-05:** Pre-contract peak-season dedicated linehaul truckload capacity to defend against the annual Black Friday logistics shock ($+2.7$ day carrier surge / $+3.3$ day total delivery surge).
 * **P2 — Operational Optimization (Merchant SLAs & Packaging):**
   - **INT-06:** Deploy graduated merchant warehouse dispatch support and 48-hour SLA monitoring to address the $9.4\%$ of orders with $>5$-day handling bottlenecks.
   - **INT-07:** Standardize packaging and volumetric box sizing in heavy categories (`bed_bath_table`, `furniture_decor`) for operational logistics efficiency and damage mitigation.
@@ -40,12 +40,12 @@ Rather than treating all variables equally or making unsubstantiated causal clai
 ```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                      LEVEL 1: STRUCTURAL BASELINE LAYER                     │
-│  - 70.3% Seller Geographic Concentration in São Paulo (SP)                  │
-│  - Continental Long-Haul Logistics Exposure (Interstate Share = 63.6%)      │
+│  - 70.9% Seller Geographic Concentration in São Paulo (SP)                  │
+│  - Continental Long-Haul Logistics Exposure (Interstate Share = 64.0%)      │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                      LEVEL 2: PRIMARY OPERATIONAL DRIVERS                   │
-│  - Carrier Linehaul Transit: 82.5% Duration Share (4.0x Excess Odds/SD)     │
-│  - Merchant Warehouse Handling: 17.5% Duration Share (12.0% Excess Odds/SD) │
+│  - Carrier Linehaul Transit: 76.9% Duration Share (3.2x Excess Odds/SD)     │
+│  - Merchant Warehouse Handling: 23.1% Duration Share (38.0% Excess Odds/SD) │
 │  - Promised SLA Breaches: Econometric break at 0.5d; Escalation at 3.5d     │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                      LEVEL 3: FEEDBACK TIMING AMPLIFIERS                    │
@@ -63,10 +63,10 @@ Rather than treating all variables equally or making unsubstantiated causal clai
 
 | Hierarchy Level | Factor | Evidence Type | Effect Size | Business Exposure | Actionability | Priority |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Level 1: Structural** | Geographic Concentration | Descriptive Fact | $70.3\%$ SP sellers | $63.6\%$ interstate orders | Low (Multi-Year) | **P1 — Strategic** |
+| **Level 1: Structural** | Geographic Concentration | Descriptive Fact | $70.9\%$ SP sellers | $64.0\%$ interstate orders | Low (Multi-Year) | **P1 — Strategic** |
 | **Level 1: Structural** | Linehaul Exposure | Adjusted Associative | Distance mediated by duration | $18\text{–}24\text{d}$ transit to North/NE | Medium (Hubs) | **P1 — Strategic** |
-| **Level 2: Operational** | Carrier Linehaul Delay | Adjusted Associative | $82.5\%$ duration; $\text{OR}_Z = 1.48$ | $89.7\%$ of Black Friday shock | High (Carrier SLAs) | **P0 — Immediate** |
-| **Level 2: Operational** | Seller Handling Bottleneck | Adjusted Associative | $17.5\%$ duration; $\text{OR}_Z = 1.12$ | $9.4\%$ orders $>5\text{d}$ dispatch | High (Seller SLAs) | **P2 — Optimization** |
+| **Level 2: Operational** | Carrier Linehaul Delay | Adjusted Associative | $76.9\%$ duration; $\text{OR}_Z = 2.20$ | $81.8\%$ of Black Friday surge (+2.7d) | High (Carrier SLAs) | **P0 — Immediate** |
+| **Level 2: Operational** | Seller Handling Bottleneck | Adjusted Associative | $23.1\%$ duration; $\text{OR}_Z = 1.38$ | $9.4\%$ orders $>5\text{d}$ dispatch | High (Seller SLAs) | **P2 — Optimization** |
 | **Level 2: Operational** | SLA Date Breach | Robust Threshold | Breakpoint $0.5\text{d}$; Escalation $3.5\text{d}$ | $5.2\%$ orders $>3.5\text{d}$ late | High (Buffer Recalibration) | **P0 — Immediate** |
 | **Level 3: Amplifier** | Survey Timing Asynchrony | Mechanistic / Controlled | Adjusted $\text{OR} = 12.50\text{x}$ | $26.1\%$ of platform low reviews | Immediate (Zero Capex) | **P0 — Immediate** |
 | **Level 4: Context** | Product Category | Overpowered Noise | Interaction $\eta_p^2 = 0.073\%$ | Top 4 cats $= 34.8\%$ low revs | Medium (Packaging) | **P2 — Optimization** |
@@ -257,14 +257,14 @@ $$\text{Priority Score} = \text{Severity} \times \text{Exposure} \times \text{Ac
                ANATOMICAL EVIDENCE-BASED OPERATIONAL WATERFALL
                                       │
                                       ▼
-                     1. STRUCTURAL BASELINE LAYER
-        70.3% of sellers concentrated in São Paulo state.
-        Generates structural interstate exposure (63.6% of orders).
+                      1. STRUCTURAL BASELINE LAYER
+        70.9% of sellers concentrated in São Paulo state.
+        Generates structural interstate exposure (64.0% of orders).
                                       │
                                       ▼
                     2. CARRIER LINEHAUL BOTTLENECK
-        Carrier transit accounts for 82.5% of fulfillment duration.
-        Excess odds ratio is 4.0x vs. merchant warehouse handling.
+        Carrier transit accounts for 76.9% of fulfillment duration.
+        Excess odds ratio is 3.2x per SD vs. merchant warehouse handling.
                                       │
                                       ▼
                      3. CORRIDOR CONCENTRATION
@@ -295,7 +295,7 @@ $$\text{Priority Score} = \text{Severity} \times \text{Exposure} \times \text{Ac
 
 | Analytical Dimension | Generic Competitor Approach | Olist Diagnostic Team Approach | Differentiation Status |
 | :--- | :--- | :--- | :---: |
-| **Logistics Decomposition** | Blames sellers for late delivery. | Decomposes fulfillment: proves carrier transit represents $82.5\%$ of duration and $4.0\text{x}$ excess odds vs handling. | **Differentiating** |
+| **Logistics Decomposition** | Blames sellers for late delivery. | Decomposes fulfillment: proves carrier transit represents $76.9\%$ of duration and $3.2\text{x}$ excess odds per SD vs handling. | **Differentiating** |
 | **Delay Threshold** | Uses arbitrary bins ($<5\text{d}, 5\text{–}10\text{d}$). | Profile likelihood grid search identifies econometric break ($\tau_1=0.5\text{d}$) and operational escalation ($\tau_2=3.5\text{d}$). | **Differentiating** |
 | **Survey Timing** | Assumes review creation is post-delivery. | Forensic timestamp audit reveals midnight date truncation; proves pre-delivery surveys amplify odds by $12.5\text{x}$. | **SIGNATURE DISCOVERY** |
 | **Geographic Analysis**| Ranks states by average review score. | Evaluates 69 high-volume corridors ($N \ge 100$); discovers $13.2\%$ low review concentration in `SP -> RJ`. | **Enhanced / Practical** |

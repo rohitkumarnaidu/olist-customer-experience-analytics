@@ -1007,8 +1007,8 @@ def compile_finding_register():
         },
         {
             'Finding': 'STAT-03: Fulfillment Bottleneck Belongs to Carrier Network',
-            'Evidence': 'Carrier transit duration accounts for 82.5% of fulfillment time (mean 12.1d vs 2.8d seller handling). Standardized carrier effect OR = 1.48 vs seller OR = 1.12.',
-            'Effect_Size': 'Carrier Z-score OR = 1.48 (p < 10^-50) vs Seller Z-score OR = 1.12 (p < 10^-15)',
+            'Evidence': 'Carrier transit duration accounts for 76.9% of fulfillment time (mean 9.3d carrier vs 2.8d seller handling). Standardized carrier effect OR = 2.20 vs seller OR = 1.38.',
+            'Effect_Size': 'Carrier Z-score OR = 2.20 (p < 10^-50) vs Seller Z-score OR = 1.38 (p < 10^-15)',
             'Confidence': 'p < 10^-50 across joint and fixed-effects specifications',
             'Business_Impact': 'Olist management must target 3PL carrier contracts rather than merchant fulfillment penalization.',
             'Causal_Status': 'Adjusted Associative / Decomposition',
@@ -1017,7 +1017,7 @@ def compile_finding_register():
         },
         {
             'Finding': 'STAT-04: Black Friday Collapse Was a Carrier Network Seizure',
-            'Evidence': 'During Nov-Dec 2017, seller handling increased by only +0.6 days (2.7d -> 3.3d), while carrier transit surged by +5.2 days (11.8d -> 17.0d).',
+            'Evidence': 'During Nov 2017, seller handling increased by only +0.6 days (3.0d -> 3.6d), while carrier transit surged by +2.7 days (8.4d -> 11.1d; total delivery surged +3.3d from 11.8d to 15.1d).',
             'Effect_Size': 'Late delivery rate surged from 6.8% to 16.2%; review score collapsed to 3.82 stars.',
             'Confidence': 'Historical event-study replication across all 27 states',
             'Business_Impact': 'Peak-season carrier capacity reservation is mandatory for marketplace solvency.',

@@ -4,4 +4,4 @@ KPI-02,SP -> RJ Corridor Late Delivery Rate (%),15.3%,> 10.0%,< 7.5%,"São Paulo
 KPI-03,Severe Delivery Delay Rate (>3.5d Late),5.2%,> 4.0%,< 2.5%,"Platform-Wide Orders (5,021 orders currently)",P0 — Immediate,Carrier Linehaul Management,Weekly
 KPI-04,Merchant Warehouse Handling Time (>5d Rate),9.4%,> 8.0%,< 3.0%,"Marketplace Sellers (8,999 interstate orders)",P2 — Optimization,Seller Success & Operations,Bi-Weekly
 KPI-05,Long-Haul Trunk Duration (SP -> BA Mean Days),17.6 days,> 15.0 days,< 12.0 days,Northeast Cross-Regional Shipments,P1 — Strategic,3PL Carrier Partnerships,Monthly
-KPI-06,Black Friday Transit Inflation (Carrier Surge Days),+5.2 days,> +2.0 days,< +1.5 days,Q4 Holiday Surge Shipments,P1 — Strategic,Executive Logistics Planning,Quarterly / Seasonal Pre-Mortem
+KPI-06,Black Friday Transit Inflation (Carrier Surge Days),+2.7 days,> +2.0 days,< +1.5 days,Q4 Holiday Surge Shipments,P1 — Strategic,Executive Logistics Planning,Quarterly / Seasonal Pre-Mortem

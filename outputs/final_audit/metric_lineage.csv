@@ -1,0 +1,23 @@
+Metric_Name,Raw_Table,Transformation,Aggregation,Canonical_Table,Analysis_Module,Final_Value
+Total Orders,olist_orders_dataset.csv,Deduplicate on order_id,COUNT(DISTINCT order_id),order_analytics_base.parquet,Module 1 Inventory,"99,441"
+Delivered Orders,olist_orders_dataset.csv,Filter order_status == 'delivered',COUNT(*),analytical_model.parquet,Module 2 Data Model,"96,478"
+Gross Merchandise Value (GMV),olist_order_items_dataset.csv,Sum price + freight_value per order_id,SUM(order_gmv),analytical_model.parquet,Module 2 Financial Metrics,"R$ 15,843,553.24"
+Settlement Value,olist_order_payments_dataset.csv,Sum payment_value per order_id,SUM(payment_value_total),analytical_model.parquet,Module 2 Financial Metrics,"R$ 16,008,872.12"
+Delivered Mean Review Score,olist_order_reviews_dataset.csv,LATEST_VALID_REVIEW_PER_ORDER rule on Pop E,MEAN(review_score),analytical_model.parquet,Module 3 EDA,4.155 (Pop E mean)
+Delivered Low-Review Count,olist_order_reviews_dataset.csv,"Flag review_score in [1, 2] on Pop E",SUM(low_review),analytical_model.parquet,Module 3 EDA & M5,"12,272"
+Delivered Low-Review Rate,olist_order_reviews_dataset.csv,"12,272 low reviews / 95,824 Pop E orders",RATIO,analytical_model.parquet,Module 3 EDA & M5,12.81%
+Late Delivery Count (>0d),olist_orders_dataset.csv,order_delivered_customer_date > order_estimated_delivery_date,COUNT(*),analytical_model.parquet,Module 3 & M4,"7,655 (7.99% of Pop E)"
+Severe Delivery Delay Count (>3.5d),olist_orders_dataset.csv,delivery_delay_days > 3.5 on Pop E,COUNT(*),analytical_model.parquet,Module 4 Statistics,"4,961 (5.18% of Pop E)"
+Moderate+Severe Delay Count (>3.0d),olist_orders_dataset.csv,delivery_delay_days > 3.0 on Pop E,COUNT(*),analytical_model.parquet,Module 5 Segments,"5,021 (5.24% of Pop E)"
+Carrier Transit Mean Duration,olist_orders_dataset.csv,order_delivered_customer_date - order_delivered_carrier_date,MEAN(carrier_to_delivery_days),analytical_model.parquet,Module 2 & M4,9.30 days (Pop E)
+Seller Handling Mean Duration,olist_orders_dataset.csv,order_delivered_carrier_date - order_purchase_timestamp,MEAN(seller_handling_days),analytical_model.parquet,Module 2 & M4,2.79 days (Pop E)
+Carrier Share of Fulfillment Duration,Derived from Timestamps,9.30d carrier / (9.30d carrier + 2.79d seller),RATIO,analytical_model.parquet,Module 4 Component Models,76.9%
+SP Seller Order Concentration,olist_sellers_dataset.csv,Filter seller_state == 'SP' on order dominant seller,COUNT(*) / COUNT(Pop E),analytical_model.parquet,Module 3 EDA & M4,"70.9% (67,967 / 95,824)"
+Interstate Shipment Share,olist_customers + sellers,customer_state != seller_state on Pop E,COUNT(*) / COUNT(Pop E),analytical_model.parquet,Module 3 EDA,"64.0% (61,310 / 95,824)"
+SP -> RJ Corridor Volume,olist_customers + sellers,seller_state == 'SP' & customer_state == 'RJ',COUNT(*),analytical_model.parquet,Module 3 & M4,"8,065 orders (8.42% of Pop E)"
+SP -> RJ Low-Review Count,olist_order_reviews_dataset.csv,Filter SP->RJ & review_score <= 2,COUNT(*),analytical_model.parquet,Module 5 Segments,"1,625 low reviews (20.15% rate)"
+Strict Calendar Pre-Delivery Surveys,olist_order_reviews + orders,review_creation_date.date < order_delivered_customer_date.date,COUNT(*),analytical_model.parquet,Module 4 & M5,"4,976 orders (5.19% of Pop E)"
+Strict Pre-Delivery Low Reviews,olist_order_reviews + orders,Strict pre-delivery orders with review_score <= 2,COUNT(*),analytical_model.parquet,Module 4 & M5,"3,613 low reviews (72.61% rate)"
+Overdue-in-Transit Platform Share,olist_order_reviews + orders,"3,782 overdue-in-transit low / 14,494 platform low reviews",RATIO,analytical_model.parquet,Module 4 Statistics,26.09% (Observed Accounting Share)
+Black Friday Carrier Transit Surge,olist_orders_dataset.csv,Nov 2017 carrier mean (11.1d) - Oct 2017 baseline (8.4d),DELTA,analytical_model.parquet,Module 4 Black Friday,+2.7 days (+3.3d total delivery)
+Unique Intervention Low Review Exposure,Aggregated Across Interventions,Deduplicated set union of INT-01 through INT-07 orders with low review,DEDUPLICATED UNION,scratch/zero_trust_m5_auditor.py,Module 5 Overlap Audit,"7,005 unique low reviews (50.86% overlap)"

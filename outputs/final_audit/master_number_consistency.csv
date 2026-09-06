@@ -1,0 +1,22 @@
+Metric_Number,Source_Module,Meaning,Population,Current_Official_Value,Locations_Appearing,Consistency_Status
+70.9%,M3/M4/M5,SP seller order volume share,"Pop E (N=95,824)","70.9% (67,967 / 95,824)","EDA summary, M4/M5 reports, root_cause_matrix.csv",CONSISTENT (Legacy 70.3% from earlier raw seller cut standardized)
+64.0%,M3/M4/M5,Interstate shipment share,"Pop E (N=95,824)","64.0% (61,310 / 95,824)","EDA summary, M4/M5 reports, root_cause_matrix.csv",CONSISTENT (Legacy 63.6% from earlier unconstrained sample standardized)
+76.9%,M4/M5,Carrier share of fulfillment duration,"Pop E (N=95,824)",76.9% (9.3d carrier / 12.1d fulfillment),"M4/M5 reports, finding registers, executive scorecard",CONSISTENT (Corrected from legacy 82.5% which conflated total delivery)
+9.3 days,M2/M3/M4,Mean carrier transit duration,"Pop E (N=95,824)",9.30 days,"M4 completion report, delivery_component_models.csv",CONSISTENT
+2.8 days,M2/M3/M4,Mean merchant handling duration,"Pop E (N=95,824)",2.79 days,"M4 completion report, delivery_component_models.csv",CONSISTENT
+12.5 days,M2/M3/M4,Mean total purchase-to-delivery duration,"Pop E (N=95,824)",12.52 days,"M3 EDA summary, eda_delivery_distribution.csv",CONSISTENT
+0.5 days late,M4 Statistics,Econometric AIC-minimizing slope break,"Pop E (N=95,824)","tau = 0.5 days late (Delta AIC = -1,556)","delay_threshold_analysis.csv, M4 report, fig20",CONSISTENT (Distinguished from operational escalation zone)
+3.5 days late,M4/M5,Operational escalation failure zone,"Pop E (N=95,824)","tau = 3.5 days late (Low review rate >50%, steepening)","M4/M5 reports, high_risk_delay_segments.csv, fig19",CONSISTENT
+5.18%,M4 Statistics,Severe delay rate (>3.5d late),"Pop E (N=95,824)","5.18% (4,961 / 95,824 orders)","delay_threshold_analysis.csv, M4 report",CONSISTENT (Distinguished from >3.0d late = 5.24%)
+5.24%,M5 Prioritization,Moderate+Severe delay rate (>3.0d late),"Pop E (N=95,824)","5.24% (5,021 / 95,824 orders)","high_risk_delay_segments.csv, M5 report","CONSISTENT (5,021 orders = 1,773 mod + 3,248 sev)"
+29.63%,M5 Prioritization,Share of delivered low reviews from >3.0d delay,"Pop E Low Reviews (N=12,272)","29.63% (3,636 / 12,272 low reviews)","high_risk_delay_segments.csv, M5 report","CONSISTENT (3,608 / 12,272 = 29.40% for >3.5d)"
+12.50x,M4 Statistics,Adjusted Odds Ratio for strict pre-delivery survey,"Pop E (N=95,824)",OR = 12.50 (95% CI: 11.58 - 13.50),"survey_timing_models.csv, M4 report, fig21",CONSISTENT (Distinguished from Def B OR = 19.59x)
+19.59x,M4 Statistics,Adjusted Odds Ratio for response pre-delivery (Def B),"Pop E (N=95,824)",OR = 19.59 (95% CI: 17.89 - 21.45),"survey_timing_definitions.csv, M4 report","CONSISTENT (Def B diagnostic subgroup N=4,653)"
+26.09%,M4 Statistics,Marketplace low-review share from overdue-in-transit surveys,"Pop D Low Reviews (N=14,494)","26.09% (3,782 / 14,494 low reviews)","M4 report, M5 synthesis report, finding register","CONSISTENT (Observed accounting share, not causal claim)"
+"1,625",M5 Prioritization,Observed low reviews in SP->RJ corridor,"Pop E SP->RJ orders (N=8,065)","1,625 low reviews (20.15% rate)","high_risk_geographic_segments.csv, M5 report",CONSISTENT
+"3,636",M5 Prioritization,Low reviews in >3.0d late orders,"Pop E Late >3.0d (N=5,021)","3,636 low reviews (72.42% rate)","high_risk_delay_segments.csv, M5 report","CONSISTENT (3,608 for >3.5d)"
+"3,613",M4/M5,Low reviews in strict pre-delivery survey orders,"Pop E Strict Pre-delivery (N=4,976)","3,613 low reviews (72.61% rate)","survey_timing_segments.csv, M5 report",CONSISTENT
+"7,005",M5 Prioritization,Deduplicated unique low reviews across all 7 interventions,"Pop E Interventions Union (N=32,811)","7,005 unique low reviews (57.08% of Pop E low)","module5_intervention_overlap.csv, M5 report",CONSISTENT (Authoritative deduplicated aggregate)
+"14,255",M5 Prioritization,Gross overlapping sum of low reviews across INT-01 to INT-07,Simple non-deduplicated sum,"14,255 gross low reviews (50.86% overlap)","module5_intervention_overlap.csv, M5 report",CONSISTENT (Disclosed explicitly as gross overlapping)
++2.7 days,M4 Statistics,Black Friday carrier linehaul transit surge,Nov 2017 vs Oct 2017 orders,+2.7 days carrier transit (+3.3d total delivery),"black_friday_diagnostic.csv, executive_scorecard.csv",CONSISTENT (Corrected from legacy +5.2d total surge)
+195 tests,Test Suite,Total passing pytest unit tests,tests/test_*.py (5 test modules),195 passed (100% pass rate),"PROJECT_STATUS.md, test execution logs",CONSISTENT

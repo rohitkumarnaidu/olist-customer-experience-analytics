@@ -21,7 +21,7 @@ However, a **Zero-Trust Audit demands strict alignment between mathematical fact
 1. **The "4x More Influential" Claim:** Represents the ratio of **excess odds per standard deviation** ($+48.0\%$ vs. $+12.0\%$), NOT a 4x increase in total odds ($\text{OR}$ ratio is $1.32\text{x}$) or total probability.
 2. **The "26.1% Generated" Claim:** Is a **descriptive accounting share** ($3,782$ pre-delivery overdue reviews $/ 14,494$ total platform low reviews), NOT counterfactual generation.
 3. **The Delay Breakpoint:** The global profile-likelihood minimum occurs at $\mathbf{\tau = 0.5\text{ days late}}$ ($\Delta\text{AIC} = -1,555.9$), not $3.5\text{ days}$ ($\Delta\text{AIC} = -609.0$). $3.5\text{ days}$ represents the **operational escalation zone** where failure probability accelerates above $35\%$.
-4. **The "82.5% Duration vs. 80% Risk" Conflation:** Elapsed transit duration share ($82.5\%$) was improperly blurred with dissatisfaction attribution.
+4. **The Fulfillment Duration Share vs. Risk Conflation:** Elapsed transit duration share ($76.9\%$, mean $9.3\text{d}$ carrier vs $2.8\text{d}$ seller) was improperly blurred with dissatisfaction attribution.
 
 With the required reframing applied in `outputs/module4_required_corrections.md` and this audit report, **Module 4 provides a virtually bulletproof, judge-proof empirical foundation for the competition submission.**
 
@@ -258,9 +258,9 @@ A forensic scan of previous report drafts evaluated causal and behavioral claims
 
 | Original Claim Text | Audit Classification | Forensic Flaw Identified | Required Defensible Replacement |
 | :--- | :---: | :--- | :--- |
-| *"Carrier transit is 4x more influential than seller handling."* | **NEEDS QUALIFICATION** | Conflates excess odds ratio (+48% vs +12%) with total probability or absolute influence. | *"Per standard deviation increase, carrier transit delay exhibits 4.0x the excess odds of customer dissatisfaction compared to merchant handling."* |
-| *"Carrier transit accounts for 80% of dissatisfaction risk."* | **REPLACE / UNSUPPORTED** | Conflates 82.5% duration share with dissatisfaction risk attribution. | *"Carrier transit accounts for 82.5% of fulfillment duration and represents the primary operational predictor of low reviews."* |
-| *"Carrier capacity breakdown caused the Black Friday collapse."* | **NEEDS QUALIFICATION** | Causal attribution asserted without direct carrier telemetry. | *"Event-study decomposition demonstrates that the Black Friday collapse was concentrated in carrier transit (+5.2d) rather than merchant handling (+0.6d)."* |
+| *"Carrier transit is 4x more influential than seller handling."* | **NEEDS QUALIFICATION** | Conflates excess odds ratio (+120% vs +38% per SD; 3.2x ratio in Model D) with total probability or absolute influence. | *"Per standard deviation increase, carrier transit delay exhibits 3.2x the excess odds of customer dissatisfaction compared to merchant handling (Model D standardized OR 2.20 vs 1.38)."* |
+| *"Carrier transit accounts for 80% of dissatisfaction risk."* | **REPLACE / UNSUPPORTED** | Conflates 76.9% duration share with dissatisfaction risk attribution. | *"Carrier transit accounts for 76.9% of fulfillment duration and represents the primary operational predictor of low reviews."* |
+| *"Carrier capacity breakdown caused the Black Friday collapse."* | **NEEDS QUALIFICATION** | Causal attribution asserted without direct carrier telemetry. | *"Event-study decomposition demonstrates that the Black Friday collapse was concentrated in carrier transit (+2.7d carrier / +3.3d total) rather than merchant handling (+0.6d)."* |
 | *"Premature feedback generates 26.1% of all negative reviews."* | **NEEDS QUALIFICATION** | 'Generates' implies sole causation; ignores that orders were already overdue in transit. | *"Orders surveyed prematurely while overdue in transit account for 26.1% of all low reviews on the marketplace."* |
 | *"Customers do not care about freight price."* | **REPLACE / OVERSTATED** | Sweeping behavioral generalization. | *"Freight cost share exhibits no statistically significant direct association with dissatisfaction once transit duration and distance are controlled."* |
 | *"Olist CRM software defect caused negative reviews."* | **REPLACE / OVERREACH** | Fails to recognize that the survey trigger was activated by estimated date expiration. | *"Fulfillment-SLA Asynchrony: automated feedback requests triggered upon estimated date expiration solicit ratings before physical delivery occurs."* |
@@ -273,7 +273,7 @@ A forensic scan of previous report drafts evaluated causal and behavioral claims
 
 1. **The Structural Delay Inflection ($\tau = 0.5\text{d}$ Breakpoint, $\tau = 3.5\text{d}$ Escalation):** Verified via profile likelihood ($\Delta\text{AIC} = -1,556$). Slope immediately breaks from $-0.021$ to $-0.066$ stars/day.
 2. **The Controlled Survey Timing Multiplier ($\text{OR} = 4.12$–$12.50\text{x}$):** Fully verified across 4 definitions, nested controls, and exact delay stratification. Holds independently of delay length ($p < 10^{-50}$).
-3. **Fulfillment Bottleneck Asymmetry (Carrier $82.5\%$ Timeline, Excess Odds Ratio $4.0\text{x}$):** Verified across Model D standardized regressions and Black Friday event study.
+3. **Fulfillment Bottleneck Asymmetry (Carrier $76.9\%$ Timeline, Excess Odds Ratio $3.2\text{x}$ per SD):** Verified across Model D standardized regressions (OR 2.20 vs 1.38) and Black Friday event study (+2.7d carrier surge).
 4. **Geographic Duration Mediation:** Verified that distance is fully mediated by logistics transit time.
 5. **Negligible Category Moderation ($\eta_p^2 = 0.073\%$):** Proves universal SLA policies are viable without category complexity.
 
@@ -307,8 +307,8 @@ A forensic scan of previous report drafts evaluated causal and behavioral claims
 
 ### **SELECTED WINNING NARRATIVE: THE THREE-TIERED DIAGNOSTIC**
 Rather than presenting a simplistic single-cause story, our winning competition narrative integrates all three tiers:
-1. **The Structural Foundation (Geography):** $70.3\%$ of sellers reside in São Paulo, creating long-haul fulfillment exposure to the Northeast/North.
-2. **The Operational Driver (Carrier Linehaul):** Carrier transit accounts for $82.5\%$ of duration and $4.0\text{x}$ the excess odds of low reviews compared to merchant handling. Black Friday failure was concentrated in carrier transit ($+5.2\text{d}$).
+1. **The Structural Foundation (Geography):** $70.9\%$ of sellers reside in São Paulo, creating long-haul fulfillment exposure to the Northeast/North.
+2. **The Operational Driver (Carrier Linehaul):** Carrier transit accounts for $76.9\%$ of duration (9.3d avg) and $3.2\text{x}$ the excess odds of low reviews per SD compared to merchant handling (Model D OR 2.20 vs 1.38). Black Friday failure was concentrated in carrier transit ($+2.7\text{d}$ carrier / $+3.3\text{d}$ total delivery surge).
 3. **The Amplification Mechanism (Feedback Asynchrony — Signature Insight):** When logistics delay an order past SLA, automated CRM surveys solicit reviews while packages are still in transit, multiplying odds of a low review by $4.12$–$12.5\text{x}$ and accounting for $26.1\%$ of all negative reviews on the marketplace.
 
 ---

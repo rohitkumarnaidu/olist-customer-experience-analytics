@@ -4,4 +4,4 @@ KPI-02,SP -> RJ Corridor Late Delivery Rate,"15.31% (1,235 late orders)",< 7.5%,
 KPI-03,Platform Severe Delay Rate (>3.5d Late),"5.24% (5,021 orders)",< 2.5%,Management Milestone Target,Halving severe delay volume; aligned with Day 3.5 inflection evidence.,Strategic Milestone
 KPI-04,Merchant Warehouse Dispatch >5d Rate,"9.39% (8,999 orders)",< 3.0%,Policy Enforcement Target,Focuses on trimming the worst 10th percentile tail of slow merchants.,Operational Policy Benchmark
 KPI-05,Long-Haul Duration (SP -> BA Mean Days),17.6 days,< 12.0 days,Carrier SLA Contract Target,Aspirational target requiring multi-hub private 3PL linehaul contracts.,Commercial Negotiation Target
-KPI-06,Black Friday Linehaul Surge (Carrier Days),+5.2 days surge,< +1.5 days surge,Seasonal Capacity Planning Target,Based on dedicated pre-reserved linehaul fleet capacity.,Logistics Capacity Planning Target
+KPI-06,Black Friday Linehaul Surge (Carrier Days),+2.7 days carrier surge (+3.3d total delivery),< +1.5 days surge,Seasonal Capacity Planning Target,Based on dedicated pre-reserved linehaul fleet capacity.,Synchronized Carrier Linehaul Surge Target
