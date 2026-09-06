@@ -1,0 +1,81 @@
+column_name,layer,dtype,non_null_count,null_count,null_pct,unique_count,description
+order_id,D,object,99441,0,0.0,99441,Unique order identifier (primary key)
+customer_id,D,object,99441,0,0.0,99441,Customer identifier (FK to customers table)
+order_status,D,object,99441,0,0.0,8,"Current order status (delivered, shipped, canceled, etc.)"
+order_purchase_timestamp,D,object,99441,0,0.0,98875,Timestamp when customer placed the order
+order_approved_at,D,object,99281,160,0.1609,90733,Timestamp when payment was approved
+order_delivered_carrier_date,D,object,97658,1783,1.793,81018,Timestamp when order was handed to carrier
+order_delivered_customer_date,D,object,96476,2965,2.9817,95664,Timestamp when customer received the order
+order_estimated_delivery_date,D,object,99441,0,0.0,459,Estimated delivery date shown to customer
+customer_unique_id,D,object,99441,0,0.0,96096,Deduplicated customer identifier across orders
+customer_zip_code_prefix,D,int64,99441,0,0.0,14994,Customer 5-digit zip code prefix
+customer_city,D,object,99441,0,0.0,4119,Customer city name
+customer_state,D,object,99441,0,0.0,27,"Customer state code (2-letter, e.g. SP, RJ)"
+customer_lat,C,float64,99162,279,0.2806,14836,Customer latitude (zip centroid)
+customer_lng,C,float64,99162,279,0.2806,14836,Customer longitude (zip centroid)
+item_count,B,float64,98666,775,0.7794,17,Number of items in the order
+item_price_total,B,float64,98666,775,0.7794,7761,Sum of item prices in BRL
+freight_total,B,float64,98666,775,0.7794,7970,Sum of freight charges in BRL
+distinct_products,B,float64,98666,775,0.7794,8,Number of distinct product IDs in the order
+distinct_sellers,B,float64,98666,775,0.7794,5,Number of distinct seller IDs in the order
+distinct_categories,B,float64,98666,775,0.7794,3,Number of distinct product categories in the order
+order_gmv,B,float64,98666,775,0.7794,31035,Gross Merchandise Value: item_price_total + freight_total
+multi_seller_flag,B,object,98666,775,0.7794,2,True if order has multiple distinct sellers
+multi_category_flag,B,object,98666,775,0.7794,2,True if order has multiple distinct categories
+dominant_category,B,object,98666,775,0.7794,74,Product category with highest cumulative spend
+dominant_seller,B,object,98666,775,0.7794,3085,Seller with highest cumulative spend in the order
+seller_zip_code_prefix,D,float64,98666,775,0.7794,2242,Dominant seller 5-digit zip code prefix
+seller_city,D,object,98666,775,0.7794,611,Dominant seller city name
+seller_state,D,object,98666,775,0.7794,23,Dominant seller state code
+seller_lat,C,float64,98450,991,0.9966,2235,Dominant seller latitude (zip centroid)
+seller_lng,C,float64,98450,991,0.9966,2235,Dominant seller longitude (zip centroid)
+payment_value_total,B,float64,99440,1,0.001,27979,Settlement Value: sum of payment_value in BRL
+payment_line_count,B,float64,99440,1,0.001,20,Number of payment line items for the order
+payment_type_count,B,float64,99440,1,0.001,2,Number of distinct payment types used
+payment_installments_max,B,float64,99440,1,0.001,24,Maximum installment count across payment lines
+payment_installments_min,B,float64,99440,1,0.001,24,Minimum installment count across payment lines
+payment_installments_mean,B,float64,99440,1,0.001,51,Mean installment count across payment lines
+multi_payment_flag,B,object,99440,1,0.001,2,True if order used multiple payment lines
+dominant_payment_type,B,object,99440,1,0.001,5,Payment type with the highest total payment value
+review_id,B,object,98673,768,0.7723,98095,Selected review identifier (latest valid per order)
+review_score,B,float64,98673,768,0.7723,5,Selected review score (1-5)
+review_comment_title,B,object,11550,87891,88.3851,4525,Selected review title text (nullable)
+review_comment_message,B,object,40775,58666,58.9958,36060,Selected review message text (nullable)
+review_creation_date,B,object,98673,768,0.7723,636,Timestamp when selected review was created
+review_answer_timestamp,B,object,98673,768,0.7723,97933,Timestamp when selected review was answered
+review_count_for_order,B,float64,98673,768,0.7723,3,Total number of reviews submitted for this order
+multi_review_flag,B,object,98673,768,0.7723,2,True if order has multiple review submissions
+is_delivered,D,bool,99441,0,0.0,2,True if order_status == 'delivered'
+has_delivery_date,E,bool,99441,0,0.0,2,True if order_delivered_customer_date is not null
+eligible_for_delivery_analysis,D,bool,99441,0,0.0,2,True if is_delivered AND has_delivery_date
+financial_diff,F,float64,99441,0,0.0,996,GMV minus Settlement Value (BRL)
+financial_abs_diff,F,float64,99441,0,0.0,974,Absolute value of financial_diff
+financial_reconciled_flag,F,bool,99441,0,0.0,2,True if |financial_diff| < 0.01 BRL
+has_items,E,bool,99441,0,0.0,2,True if item_count is not null (order has item records)
+has_payment_record,E,bool,99441,0,0.0,2,True if payment_value_total is not null
+has_review,E,bool,99441,0,0.0,2,True if review_score is not null
+has_customer_coordinates,E,bool,99441,0,0.0,2,True if customer_lat is not null
+has_seller_coordinates,E,bool,99441,0,0.0,2,True if seller_lat is not null
+has_product_category,E,bool,99441,0,0.0,2,True if dominant_category is not null
+has_approval_date,E,bool,99441,0,0.0,2,True if order_approved_at is not null
+has_carrier_date,E,bool,99441,0,0.0,2,True if order_delivered_carrier_date is not null
+low_review_flag,F,bool,99441,0,0.0,2,True if review_score <= 2
+high_review_flag,F,bool,99441,0,0.0,2,True if review_score >= 4
+review_text_available,F,bool,99441,0,0.0,2,True if review_comment_message is not null
+review_title_available,F,bool,99441,0,0.0,2,True if review_comment_title is not null
+multi_item_order,F,bool,99441,0,0.0,2,True if item_count > 1
+freight_share_pct,F,float64,98666,775,0.7794,41922,Freight as percentage of GMV (0-100)
+discrepancy_bucket,F,object,99441,0,0.0,5,"Financial diff bucket: exact_match, minor_<1, small_<10, medium_<100, large_>=100, no_data"
+purchase_year,G,Int64,99441,0,0.0,3,Year extracted from order_purchase_timestamp
+purchase_month,G,Int64,99441,0,0.0,12,Month (1-12) extracted from order_purchase_timestamp
+purchase_year_month,G,object,99441,0,0.0,25,Year-month period string (e.g. 2017-01)
+purchase_quarter,G,Int64,99441,0,0.0,4,Quarter (1-4) extracted from order_purchase_timestamp
+purchase_day_of_week,G,Int64,99441,0,0.0,7,"Day of week (0=Monday, 6=Sunday)"
+purchase_day_name,G,object,99441,0,0.0,7,"Day name (e.g. Monday, Tuesday)"
+purchase_hour,G,Int64,99441,0,0.0,24,Hour of day (0-23) from order_purchase_timestamp
+is_weekend_purchase,G,boolean,99441,0,0.0,2,True if purchase_day_of_week is Saturday or Sunday
+delivery_days_total,G,float64,96476,2965,2.9817,5035,Days from purchase to delivery (purchase to actual delivery)
+delivered_on_time,G,boolean,96476,2965,2.9817,2,True if actual delivery <= estimated delivery date
+delivery_delay_days,G,float64,96476,2965,2.9817,5835,"Days beyond estimated delivery (positive = late, negative = early)"
+approval_to_carrier_days,G,float64,97644,1797,1.8071,2624,Days from payment approval to carrier handoff
+carrier_to_delivery_days,G,float64,96475,2966,2.9827,4445,Days from carrier handoff to customer delivery
