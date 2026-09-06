@@ -1,0 +1,7 @@
+Combination_ID,Combination_Name,Order_Count,Order_Share_Pct,Total_GMV_BRL,GMV_Share_Pct,Low_Reviews,Low_Review_Rate_Pct,Dissatisfaction_Share_Pct,Operational_Mechanism
+COMBO-01,Severe Delay (>3.5d) + Pre-Delivery Survey,4671,4.87456169644348,840022.77,5.493944911702367,3525,75.46563904945408,28.72392438070404,Feedback timing amplifies severe delay
+COMBO-02,SP -> RJ Corridor + Severe Delay (>3.5d),968,1.0101853397896143,153573.99,1.0044097268105365,790,81.61157024793388,6.437418513689701,Carrier bottleneck on high-volume trunk
+COMBO-03,SP -> RJ Corridor + Pre-Delivery Survey,975,1.0174903990649524,153954.91,1.0069010324876024,791,81.12820512820514,6.4455671447196865,Carrier bottleneck on high-volume trunk
+COMBO-04,Slow Warehouse Handling (>5d) + Interstate Transit,8999,9.39117548839539,1845525.34,12.070166325504225,1992,22.135792865873984,16.23207301173403,Warehouse delay compounds interstate transit
+COMBO-05,Top 4 Categories + Severe Delay (>3.5d),1676,1.749039906495241,268522.65,1.7562007832767863,1208,72.0763723150358,9.84354628422425,Volume exposure in heavy goods
+COMBO-06,Black Friday Nov 2017 Surge Orders,7237,7.552387710803139,1142861.6400000001,7.4745817805127155,1199,16.56763852425038,9.770208604954368,Volume exposure in heavy goods
