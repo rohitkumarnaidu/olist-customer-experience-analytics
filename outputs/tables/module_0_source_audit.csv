@@ -1,0 +1,6 @@
+Citation,Claim in Doc,Type,Status
+Pavel Grigoryev Olist Deep Dive [24],Average review score dropped from 4.5 in 2017 to 3.9 in 2018,Secondary Student / Portfolio Analysis,UNVERIFIED EXTERNAL CLAIM (Must calculate directly from raw dataset; do not trust 4.5 to 3.9 drop without proof)
+Htan Phat Kaggle Notebook [178],Order volumes peak during holiday shopping periods like November Black Friday,Secondary Kaggle Notebook,PLAUSIBLE HYPOTHESIS (Must verify monthly counts directly)
+Lipham Kaggle Analysis [20] / Sanket Sakhare [124],Late delivery rate reported as 40.3% in one study and 6.8% in another,Conflicting Secondary Studies,CONTRADICTORY (Demonstrates danger of trusting unverified Kaggle rates; must calculate exact late rate)
+Sankalp Singh LinkedIn Post [35],Delivery delays beyond 20 days cause a 20% drop in satisfaction,Unpublished Social Media Snippet,ANECDOTAL (Do not use as factual benchmark; compute actual empirical drop)
+Andre Matiello Quasi-Experiment [36],Missing promised delivery date causes significant drop in customer satisfaction,Secondary Portfolio Article,"METHODOLOGICAL INSPIRATION (Good concept for promise accuracy analysis, but numbers must be ours)"

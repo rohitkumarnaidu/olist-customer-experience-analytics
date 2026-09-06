@@ -1,0 +1,6 @@
+Claim,Source A (Spec),Source B (Raw File),Match?,Correct Source,Action,Source A (customer_id),Source B (customer_unique_id),Source A (Orders with >1 item),Source B (Extra item rows),Source A (Orders with >1 payment),Source B (Extra payment rows),Source A (Zip code prefixes),Source B (Total geo rows)
+Reviews table row count,"100,000 rows","99,224 rows",No,"Source B (Raw File: 99,224)","Document empirical row count 99,224 as verified truth; do not impute.",,,,,,,,
+Customer ID uniqueness,,,No (Semantic difference),Both are correct for their respective grains,Enforce customer_id = order instance; customer_unique_id = individual.,"99,441 unique values","96,096 unique values",,,,,,
+Multi-item orders,,,Distinguishable metrics,Both are correct,"Clearly separate 9,803 multi-item orders from 13,984 additional item lines.",,,"9,803 orders","13,984 rows",,,,
+Multi-payment orders,,,Distinguishable metrics,Both are correct,Pre-aggregate payments to order_id before joining.,,,,,"2,961 orders","4,446 rows",,
+Geolocation coordinate uniqueness,,,No (1:N relationship),Raw table is non-unique coordinate trace,Pre-aggregate to mean centroid coordinates per prefix.,,,,,,,"19,015 unique prefixes","1,000,163 rows"

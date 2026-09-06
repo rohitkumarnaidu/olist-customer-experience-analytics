@@ -1,0 +1,267 @@
+{
+  "inventory": [
+    {
+      "dataset_name": "olist_orders_dataset.csv",
+      "file_size_bytes": 17654914,
+      "actual_rows": 99441,
+      "expected_rows": 99441,
+      "row_count_match": true,
+      "column_count": 8,
+      "duplicate_rows": 0,
+      "total_nulls": 4908,
+      "null_cell_pct": 0.617,
+      "read_status": "SUCCESS"
+    },
+    {
+      "dataset_name": "olist_order_items_dataset.csv",
+      "file_size_bytes": 15438671,
+      "actual_rows": 112650,
+      "expected_rows": 112650,
+      "row_count_match": true,
+      "column_count": 7,
+      "duplicate_rows": 0,
+      "total_nulls": 0,
+      "null_cell_pct": 0.0,
+      "read_status": "SUCCESS"
+    },
+    {
+      "dataset_name": "olist_order_payments_dataset.csv",
+      "file_size_bytes": 5777138,
+      "actual_rows": 103886,
+      "expected_rows": 103886,
+      "row_count_match": true,
+      "column_count": 5,
+      "duplicate_rows": 0,
+      "total_nulls": 0,
+      "null_cell_pct": 0.0,
+      "read_status": "SUCCESS"
+    },
+    {
+      "dataset_name": "olist_order_reviews_dataset.csv",
+      "file_size_bytes": 14451670,
+      "actual_rows": 99224,
+      "expected_rows": 100000,
+      "row_count_match": false,
+      "column_count": 7,
+      "duplicate_rows": 0,
+      "total_nulls": 145903,
+      "null_cell_pct": 21.006,
+      "read_status": "SUCCESS"
+    },
+    {
+      "dataset_name": "olist_customers_dataset.csv",
+      "file_size_bytes": 9033957,
+      "actual_rows": 99441,
+      "expected_rows": 99441,
+      "row_count_match": true,
+      "column_count": 5,
+      "duplicate_rows": 0,
+      "total_nulls": 0,
+      "null_cell_pct": 0.0,
+      "read_status": "SUCCESS"
+    },
+    {
+      "dataset_name": "olist_products_dataset.csv",
+      "file_size_bytes": 2379446,
+      "actual_rows": 32951,
+      "expected_rows": 32951,
+      "row_count_match": true,
+      "column_count": 9,
+      "duplicate_rows": 0,
+      "total_nulls": 2448,
+      "null_cell_pct": 0.825,
+      "read_status": "SUCCESS"
+    },
+    {
+      "dataset_name": "olist_sellers_dataset.csv",
+      "file_size_bytes": 174703,
+      "actual_rows": 3095,
+      "expected_rows": 3095,
+      "row_count_match": true,
+      "column_count": 4,
+      "duplicate_rows": 0,
+      "total_nulls": 0,
+      "null_cell_pct": 0.0,
+      "read_status": "SUCCESS"
+    },
+    {
+      "dataset_name": "olist_geolocation_dataset.csv",
+      "file_size_bytes": 61273883,
+      "actual_rows": 1000163,
+      "expected_rows": 1000163,
+      "row_count_match": true,
+      "column_count": 5,
+      "duplicate_rows": 261831,
+      "total_nulls": 0,
+      "null_cell_pct": 0.0,
+      "read_status": "SUCCESS"
+    },
+    {
+      "dataset_name": "product_category_name_translation.csv",
+      "file_size_bytes": 2613,
+      "actual_rows": 71,
+      "expected_rows": 71,
+      "row_count_match": true,
+      "column_count": 2,
+      "duplicate_rows": 0,
+      "total_nulls": 0,
+      "null_cell_pct": 0.0,
+      "read_status": "SUCCESS"
+    }
+  ],
+  "structural_findings": {
+    "orders": {
+      "total_rows": 99441,
+      "unique_order_ids": 99441,
+      "unique_customer_ids": 99441,
+      "is_customer_id_unique_in_orders": true,
+      "order_status_distribution": {
+        "delivered": 96478,
+        "shipped": 1107,
+        "canceled": 625,
+        "unavailable": 609,
+        "invoiced": 314,
+        "processing": 301,
+        "created": 5,
+        "approved": 2
+      },
+      "purchase_date_min": "2016-09-04 21:15:19",
+      "purchase_date_max": "2018-10-17 17:30:18",
+      "delivered_orders_count": 96478,
+      "missing_delivered_dates_in_delivered_status": 8,
+      "non_delivered_orders_count": 2963
+    },
+    "items": {
+      "total_item_rows": 112650,
+      "unique_orders_in_items": 98666,
+      "multi_item_orders_count": 9803,
+      "multi_item_orders_pct": 9.9355,
+      "max_items_in_order": 21,
+      "unique_products": 32951,
+      "unique_sellers": 3095,
+      "price_min": 0.85,
+      "price_max": 6735.0,
+      "price_mean": 120.65373901464713,
+      "price_median": 74.99,
+      "freight_min": 0.0,
+      "freight_max": 409.68,
+      "freight_mean": 19.990319928983578,
+      "freight_median": 16.26
+    },
+    "payments": {
+      "total_payment_rows": 103886,
+      "unique_orders_in_payments": 99440,
+      "multi_payment_orders_count": 2961,
+      "multi_payment_orders_pct": 2.9777,
+      "max_payments_in_order": 29,
+      "payment_type_distribution": {
+        "credit_card": 76795,
+        "boleto": 19784,
+        "voucher": 5775,
+        "debit_card": 1529,
+        "not_defined": 3
+      },
+      "installments_min": 0,
+      "installments_max": 24,
+      "installments_zero_count": 2,
+      "total_payment_value_sum": 16008872.120000001,
+      "zero_payment_value_count": 9
+    },
+    "reviews": {
+      "total_review_rows": 99224,
+      "unique_review_ids": 98410,
+      "duplicate_review_ids": 814,
+      "unique_orders_in_reviews": 98673,
+      "orders_with_multiple_reviews": 547,
+      "review_score_distribution": {
+        "1": 11424,
+        "2": 3151,
+        "3": 8179,
+        "4": 19142,
+        "5": 57328
+      },
+      "review_score_mean": 4.086,
+      "missing_title_count": 87656,
+      "missing_title_pct": 88.34,
+      "missing_message_count": 58247,
+      "missing_message_pct": 58.7,
+      "both_title_and_msg_missing": 56518
+    },
+    "customers": {
+      "total_customer_rows": 99441,
+      "unique_customer_ids": 99441,
+      "unique_person_ids": 96096,
+      "repeat_customers_count": 2997,
+      "repeat_customer_pct": 3.1188,
+      "max_orders_single_person": 17,
+      "top_5_states": {
+        "SP": 41746,
+        "RJ": 12852,
+        "MG": 11635,
+        "RS": 5466,
+        "PR": 5045
+      }
+    },
+    "products": {
+      "total_products": 32951,
+      "unique_product_ids": 32951,
+      "missing_category_name_count": 610,
+      "missing_category_name_pct": 1.8512,
+      "missing_weight_count": 2,
+      "missing_dimensions_count": 2,
+      "unique_categories": 73
+    },
+    "sellers": {
+      "total_sellers": 3095,
+      "unique_seller_ids": 3095,
+      "unique_zip_prefixes": 2246,
+      "top_5_seller_states": {
+        "SP": 1849,
+        "PR": 349,
+        "MG": 244,
+        "SC": 190,
+        "RJ": 171
+      }
+    },
+    "geolocation": {
+      "total_geolocation_rows": 1000163,
+      "unique_zip_prefixes": 19015,
+      "duplicate_zip_prefixes": 981148,
+      "mean_rows_per_zip": 52.6,
+      "median_rows_per_zip": 29.0,
+      "max_rows_single_zip": 1146,
+      "min_rows_single_zip": 1,
+      "lat_min": -36.6053744107061,
+      "lat_max": 45.06593318269697,
+      "lng_min": -101.46676644931476,
+      "lng_max": 121.10539381057764,
+      "rows_outside_brazil_lat": 29,
+      "rows_outside_brazil_lng": 37
+    },
+    "translation": {
+      "total_translations": 71,
+      "unique_portuguese_names": 71,
+      "unique_english_names": 71,
+      "product_categories_in_products_table": 73,
+      "categories_missing_translation": [
+        "pc_gamer",
+        "portateis_cozinha_e_preparadores_de_alimentos"
+      ],
+      "count_missing_translation": 2
+    }
+  },
+  "validation_gates": {
+    "gate_1_files_readable": true,
+    "gate_2_row_counts_measured": true,
+    "gate_3_expected_vs_actual_documented": true,
+    "gate_4_columns_checked": true,
+    "gate_5_keys_validated": true,
+    "gate_6_null_profiles_generated": true,
+    "gate_7_duplicates_audited": true,
+    "gate_8_datetime_ranges_inspected": true,
+    "gate_9_geolocation_multiplicity_quantified": true,
+    "gate_10_zero_data_merged": true,
+    "gate_11_zero_analytical_conclusions": true,
+    "gate_12_outputs_saved": true
+  }
+}

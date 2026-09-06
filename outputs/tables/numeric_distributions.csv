@@ -1,0 +1,13 @@
+dataset,column,count,mean,std,min,p25,median,p75,p95,max
+olist_order_items_dataset.csv,price,112650,120.654,183.634,0.85,39.9,74.99,134.9,349.9,6735.0
+olist_order_items_dataset.csv,freight_value,112650,19.99,15.806,0.0,13.08,16.26,21.15,45.12,409.68
+olist_order_payments_dataset.csv,payment_installments,103886,2.853,2.687,0.0,1.0,1.0,4.0,10.0,24.0
+olist_order_payments_dataset.csv,payment_value,103886,154.1,217.494,0.0,56.79,100.0,171.8375,437.635,13664.08
+olist_order_reviews_dataset.csv,review_score,99224,4.086,1.348,1.0,4.0,5.0,5.0,5.0,5.0
+olist_products_dataset.csv,product_name_lenght,32341,48.477,10.246,5.0,42.0,51.0,57.0,60.0,76.0
+olist_products_dataset.csv,product_description_lenght,32341,771.495,635.115,4.0,339.0,595.0,972.0,2063.0,3992.0
+olist_products_dataset.csv,product_photos_qty,32341,2.189,1.737,1.0,1.0,1.0,3.0,6.0,20.0
+olist_products_dataset.csv,product_weight_g,32949,2276.472,4282.039,0.0,300.0,700.0,1900.0,10850.0,40425.0
+olist_products_dataset.csv,product_length_cm,32949,30.815,16.914,7.0,18.0,25.0,38.0,65.0,105.0
+olist_products_dataset.csv,product_height_cm,32949,16.938,13.638,2.0,8.0,13.0,21.0,44.0,105.0
+olist_products_dataset.csv,product_width_cm,32949,23.197,12.079,6.0,15.0,20.0,30.0,47.0,118.0

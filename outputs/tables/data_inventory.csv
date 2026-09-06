@@ -1,0 +1,10 @@
+dataset_name,file_size_bytes,actual_rows,expected_rows,row_count_match,column_count,duplicate_rows,total_nulls,null_cell_pct,read_status
+olist_orders_dataset.csv,17654914,99441,99441,True,8,0,4908,0.617,SUCCESS
+olist_order_items_dataset.csv,15438671,112650,112650,True,7,0,0,0.0,SUCCESS
+olist_order_payments_dataset.csv,5777138,103886,103886,True,5,0,0,0.0,SUCCESS
+olist_order_reviews_dataset.csv,14451670,99224,100000,False,7,0,145903,21.006,SUCCESS
+olist_customers_dataset.csv,9033957,99441,99441,True,5,0,0,0.0,SUCCESS
+olist_products_dataset.csv,2379446,32951,32951,True,9,0,2448,0.825,SUCCESS
+olist_sellers_dataset.csv,174703,3095,3095,True,4,0,0,0.0,SUCCESS
+olist_geolocation_dataset.csv,61273883,1000163,1000163,True,5,261831,0,0.0,SUCCESS
+product_category_name_translation.csv,2613,71,71,True,2,0,0,0.0,SUCCESS
