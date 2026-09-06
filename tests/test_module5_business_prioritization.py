@@ -175,3 +175,56 @@ def test_required_figure_existence_and_size(figname):
     assert figpath.exists(), f"Missing figure: {figpath}"
     file_size = figpath.stat().st_size
     assert file_size > 50000, f"Figure {figname} is suspiciously small ({file_size} bytes), check DPI!"
+
+
+# =============================================================================
+# 6. ZERO-TRUST AUDIT TABLES & DEDUPLICATION VERIFICATION
+# =============================================================================
+REQUIRED_AUDIT_TABLES = [
+    ("module5_root_cause_language_audit.csv", ["Factor", "Current_Label", "Approved_Zero_Trust_Label"]),
+    ("module5_intervention_overlap.csv", ["Intervention", "Target_Orders", "Observed_Low_Reviews"]),
+    ("prioritization_sensitivity.csv", ["ID", "Original_Score", "Rank_Original", "Rank_Equal", "Rank_Exposure", "Rank_Evidence", "Rank_Actionability"]),
+    ("intervention_counterfactual_audit.csv", ["Claim_ID", "Original_Phrasing", "Audit_Classification", "Approved_Correction"]),
+    ("target_threshold_audit.csv", ["KPI_Code", "Metric", "Proposed_Target", "Classification"]),
+    ("recommendation_evidence_chain.csv", ["Intervention_ID", "Observed_Problem", "Empirical_Evidence", "Recommended_Pilot", "Success_KPI"]),
+    ("module5_final_findings.csv", ["Finding_ID", "Title", "Empirical_Fact", "Priority_Tier"])
+]
+
+
+@pytest.mark.parametrize("filename,expected_cols", REQUIRED_AUDIT_TABLES)
+def test_zero_trust_audit_tables_exist_and_valid(filename, expected_cols):
+    """Verifies that all 7 Zero-Trust Audit tables exist, are populated, and have expected schemas."""
+    filepath = TABLES_DIR / filename
+    assert filepath.exists(), f"Missing audit table: {filepath}"
+    df = pd.read_csv(filepath)
+    assert len(df) > 0, f"Audit table {filename} is empty!"
+    for col in expected_cols:
+        assert col in df.columns, f"Missing column '{col}' in {filename}"
+
+
+def test_intervention_overlap_deduplication_accounting():
+    """Verifies that inter-intervention overlap is correctly quantified and deduplicated."""
+    overlap_path = TABLES_DIR / "module5_intervention_overlap.csv"
+    assert overlap_path.exists()
+    df = pd.read_csv(overlap_path)
+
+    unique_row = df[df['Intervention'].str.contains('UNIQUE TOTAL')]
+    gross_row = df[df['Intervention'].str.contains('GROSS TOTAL')]
+    overlap_row = df[df['Intervention'].str.contains('OVERLAP')]
+
+    assert len(unique_row) == 1, "Missing UNIQUE TOTAL row in overlap table"
+    assert len(gross_row) == 1, "Missing GROSS TOTAL row in overlap table"
+    assert len(overlap_row) == 1, "Missing OVERLAP row in overlap table"
+
+    unique_low = unique_row['Observed_Low_Reviews'].iloc[0]
+    gross_low = gross_row['Observed_Low_Reviews'].iloc[0]
+
+    # Verify that unique low reviews is strictly 7,005 and less than gross sum 14,255
+    assert unique_low == 7005, f"Expected 7,005 unique low reviews, got {unique_low}"
+    assert gross_low == 14255, f"Expected 14,255 gross low reviews, got {gross_low}"
+    assert unique_low < 12272, "Unique low reviews must not exceed total delivered low reviews (12,272)"
+
+    # Verify overlap percentage is ~50.86%
+    overlap_rate = (gross_low - unique_low) / gross_low * 100.0
+    assert 50.0 <= overlap_rate <= 52.0, f"Overlap rate {overlap_rate}% outside expected 50-52% range"
+

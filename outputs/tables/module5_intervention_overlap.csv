@@ -1,0 +1,11 @@
+Intervention,Target_Orders,Observed_Low_Reviews,Target_GMV_BRL,Low_Review_Rate_Pct
+INT-01 (Survey Gating),4976,3613,884816.45,72.61
+INT-02 (SP->RJ SLA Buffer),8065,1625,1237250.34,20.15
+INT-03 (Proactive Delay Alert),4961,3608,885437.43,72.73
+INT-04 (Interstate 3PL Long-Haul),7097,1308,1289089.66,18.43
+INT-05 (Black Friday Peak Linehaul),6354,1190,986918.75,18.73
+INT-06 (Merchant Handling SLA),13808,2911,2617338.26,21.08
+INT-07 (Bulky Category Packaging),0,0,0.0,0.0
+--- GROSS TOTAL (Simple Sum) ---,45261,14255,7900850.89,31.5
+--- UNIQUE TOTAL (Deduplicated Union) ---,32811,7005,5594527.48,21.35
+--- OVERLAP / DOUBLE COUNT ---,12450,7250,2306323.41,50.86

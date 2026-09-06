@@ -1,0 +1,8 @@
+ID,Intervention,Severity,Exposure,Actionability,Evidence,Original_Score,Score_Equal_Weight,Score_Exposure_Heavy,Score_Evidence_Heavy,Score_Actionability_Heavy,Rank_Original,Rank_Equal,Rank_Exposure,Rank_Evidence,Rank_Actionability
+INT-01,Feedback Timing Guardrail (Survey Suppression),5,5,5,5,625,100.0,100.0,100.0,100.0,1,1,1,1,1
+INT-03,Proactive In-Transit Delay Messaging (Day 3.5 Alert),5,5,4,4,400,90.0,93.0,87.0,87.0,2,2,2,3,2
+INT-02,Dynamic SLA Buffer Recalibration (SP -> RJ),4,4,4,5,320,85.0,84.0,90.0,83.0,3,3,3,2,3
+INT-04,Interstate 3PL Carrier Diversification,3,3,4,5,180,75.0,71.0,83.0,76.0,4,4,5,4,5
+INT-05,Peak-Season Linehaul Capacity Reservation (Black Friday),3,2,5,5,150,75.0,64.0,82.0,82.0,5,4,6,5,4
+INT-06,Merchant Warehouse Dispatch SLA Enforcement (>5d),3,4,3,4,144,70.0,74.0,74.0,67.0,6,6,4,6,6
+INT-07,Volumetric Category Packaging Standardization,3,3,3,3,81,60.0,60.0,60.0,60.0,7,7,7,7,7

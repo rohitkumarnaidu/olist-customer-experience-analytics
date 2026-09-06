@@ -1,0 +1,7 @@
+KPI_Code,Metric,Baseline,Proposed_Target,Classification,Derivation_Basis,Audit_Status
+KPI-01,Strict Pre-Delivery Survey Rate,"5.19% (4,976 orders)",0.0% (Zero Tolerance),Management Target / Engineering Rule,Direct software logic condition (gating survey behind carrier delivery scan); 0.0% is technically enforceable.,Defensible Engineering Constraint
+KPI-02,SP -> RJ Corridor Late Delivery Rate,"15.31% (1,235 late orders)",< 7.5%,Arbitrary Pilot Target,Represents an approximate 50% relative reduction; not an empirical equilibrium point.,Pilot Benchmark to be Validated
+KPI-03,Platform Severe Delay Rate (>3.5d Late),"5.24% (5,021 orders)",< 2.5%,Management Milestone Target,Halving severe delay volume; aligned with Day 3.5 inflection evidence.,Strategic Milestone
+KPI-04,Merchant Warehouse Dispatch >5d Rate,"9.39% (8,999 orders)",< 3.0%,Policy Enforcement Target,Focuses on trimming the worst 10th percentile tail of slow merchants.,Operational Policy Benchmark
+KPI-05,Long-Haul Duration (SP -> BA Mean Days),17.6 days,< 12.0 days,Carrier SLA Contract Target,Aspirational target requiring multi-hub private 3PL linehaul contracts.,Commercial Negotiation Target
+KPI-06,Black Friday Linehaul Surge (Carrier Days),+5.2 days surge,< +1.5 days surge,Seasonal Capacity Planning Target,Based on dedicated pre-reserved linehaul fleet capacity.,Logistics Capacity Planning Target
